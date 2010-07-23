@@ -39,8 +39,12 @@ def getRoles(self):
     """ return system-wide roles """
     mt = getToolByName(self, 'portal_membership')
     roles = sorted([r for r in mt.getPortalRoles() if r != 'Owner'])
-    return zip(roles, roles)
+    return DisplayList(zip(roles, roles))
+
+def getUsedForRoles(self):
+    return self.getField('usedForRoles').get(self)
 
 from collective.portletpage.content import PortletPage
 PortletPage.getRoles = getRoles
+PortletPage.getUsedForRoles = getUsedForRoles
 
