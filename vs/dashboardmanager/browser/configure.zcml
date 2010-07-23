@@ -18,6 +18,15 @@
       permission="cmf.ManagePortal"
   />
 
+  <browser:page
+      for="Products.CMFCore.interfaces.ISiteRoot"
+      name="my-dashboard-pages"
+      template="my-dashboard-pages.pt"
+      class=".manager.PersonalDashboardView"       
+      permission="cmf.ManagePortal"
+  />
+
+
 
   <browser:resourceDirectory
       name="vs.dashboardmanager.stylesheets"

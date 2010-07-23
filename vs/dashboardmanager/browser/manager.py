@@ -1,4 +1,7 @@
 import time
+
+from AccessControl import getSecurityManager
+
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -35,7 +38,27 @@ class ManagementView(BrowserView):
         self.request.response.redirect(folder.absolute_url() + '/portal_factory/Portlet Page/%s/edit' % time.time())
 
 
+    def __call__(self, *args, **kw):
+        return self.template(*args, **kw)
 
+
+class PersonalDashboardView(BrowserView):
+
+    template = ViewPageTemplateFile('my-dashboard-pages.pt')
+
+    def my_dashboard_pages(self):
+
+        user = getSecurityManager().getUser()
+        roles = set(user.getRoles())
+        catalog = getToolByName(self, 'portal_catalog')
+
+        result = list()
+        for brain in catalog(portal_type='Portlet Page'):
+            page_roles = set(brain.getUsedForRoles)
+            if roles.intersection(page_roles):
+                result.append(brain)
+
+        return result
 
     def __call__(self, *args, **kw):
         return self.template(*args, **kw)
