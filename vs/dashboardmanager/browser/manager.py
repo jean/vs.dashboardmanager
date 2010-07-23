@@ -35,7 +35,7 @@ class ManagementView(BrowserView):
         else:
             folder = portal_root[self.template_folder_id]
 
-        self.request.response.redirect(folder.absolute_url() + '/portal_factory/Portlet Page/%s/edit' % time.time())
+        self.request.response.redirect(folder.absolute_url() + '/createObject?type_name=Portlet+Page')
 
 
     def __call__(self, *args, **kw):
