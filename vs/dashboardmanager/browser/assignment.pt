@@ -7,7 +7,7 @@
     <div metal:fill-slot="main">
         <fieldset>
             <legend>Assignment</legend>
-            <form method="post" action="" >
+            <form method="post" tal:attributes="action string:${context/absolute_url}/@@push-assignment" >
                 <label for="userid">Member id</label>
                 <input type="text" name="userid" id="userid" size="20" />
                 <br/>
