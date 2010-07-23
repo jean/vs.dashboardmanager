@@ -10,6 +10,15 @@
       permission="cmf.ManagePortal"
   />
 
+  <browser:page
+      for="Products.CMFCore.interfaces.ISiteRoot"
+      name="new-dashboard-page"
+      attribute="new_dashboard_page"
+      class=".manager.ManagementView"       
+      permission="cmf.ManagePortal"
+  />
+
+
   <browser:resourceDirectory
       name="vs.dashboardmanager.stylesheets"
       directory="stylesheets"

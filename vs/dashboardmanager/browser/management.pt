@@ -7,7 +7,27 @@
     <div metal:fill-slot="main">
 
         <h1>vs.dashboardmanager</h1>
-        <pre tal:content="view/foo" />
+
+        <table class="listing" tal:define="templates view/available_dashboard_pages">
+            <thead>
+                <tr>   
+                    <th>ID</th>   
+                    <th>Title</th>   
+                </tr>   
+            </thead>
+
+            <tbody>
+                <tr tal:repeat="template templates">
+                    <td>
+                        <a tal:attributes="href string:${template/getURL}" 
+                           tal:content="template/getId" />
+                    </td> 
+                    <td tal:content="template/Title"/>
+                </tr>
+            </tbody>
+        </table>
+
+        <a tal:attributes="href string:$portal_url/@@new-dashboard-page">New dashboard page</a>
 
     </div>
   </body>
