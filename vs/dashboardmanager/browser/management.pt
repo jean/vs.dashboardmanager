@@ -4,15 +4,17 @@
       i18n:domain="vs.dashboardmanager">
 
   <body>
-    <div metal:fill-slot="main">
+    <div metal:fill-slot="main"
+        tal:define="templates view/available_dashboard_pages">
 
         <h1>vs.dashboardmanager</h1>
 
-        <table class="listing" tal:define="templates view/available_dashboard_pages">
+        <table class="listing" tal:condition="templates">
             <thead>
                 <tr>   
                     <th>ID</th>   
                     <th>Title</th>   
+                    <th>Used for roles</th>   
                 </tr>   
             </thead>
 
@@ -23,6 +25,7 @@
                            tal:content="template/getId" />
                     </td> 
                     <td tal:content="template/Title"/>
+                    <td tal:content="python: ', '.join(template.getUsedForRoles)"/>
                 </tr>
             </tbody>
         </table>
