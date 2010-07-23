@@ -5,15 +5,15 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="Custom Theme"
+      title="vs.dashboardmanager"
       directory="profiles/default"
-      description='Extension profile for the "Custom Theme" Plone theme.'
+      description='vs.dashboardmanager'
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
   <genericsetup:importStep
       name="vs.dashboardmanager.various"
-      title="Custom Theme: miscellaneous import steps"
+      title="vs.dashboardmanager: miscellaneous import steps"
       description="Various import steps that are not handled by GS import/export handlers."
       handler="vs.dashboardmanager.setuphandlers.setupVarious">
     <depends name="skins"/>
