@@ -1,0 +1,14 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
+      lang="en-US"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="vs.dashboardmanager">
+
+  <body>
+    <div metal:fill-slot="main">
+
+        <h1>vs.dashboardmanager</h1>
+        <pre tal:content="view/foo" />
+
+    </div>
+  </body>
+</html>
