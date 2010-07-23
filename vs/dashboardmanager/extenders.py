@@ -4,6 +4,7 @@ from zope.interface import implements, Interface
 from archetypes.schemaextender.interfaces import ISchemaExtender
 from archetypes.schemaextender.field import ExtensionField
 
+from Products.CMFCore.utils import getToolByName
 from Products.Archetypes.public import LinesField, DisplayList, MultiSelectionWidget
 from collective.portletpage.interfaces import IPortletPage
 
@@ -35,12 +36,10 @@ class PortletPageExtender(object):
 
 
 def getRoles(self):
-    """ ATT: get hold of all roles through PAS? """
-    return (('manager', 'Manager'),
-            ('members', 'Members'),
-            ('fakes', 'Fakers'),
-            )
-
+    """ return system-wide roles """
+    mt = getToolByName(self, 'portal_membership')
+    roles = sorted([r for r in mt.getPortalRoles() if r != 'Owner'])
+    return zip(roles, roles)
 
 from collective.portletpage.content import PortletPage
 PortletPage.getRoles = getRoles
