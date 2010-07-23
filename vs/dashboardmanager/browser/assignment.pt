@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
+      lang="en-US"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="vs.dashboardmanager">
+
+  <body>
+    <div metal:fill-slot="main">
+        <fieldset>
+            <legend>Assignment</legend>
+            <form method="post" action="" >
+                <label for="userid">Member id</label>
+                <input type="text" name="userid" id="userid" size="20" />
+                <br/>
+                <br/>
+                <label for="roles">Roles</label>
+                <select multiple="multiple" id="roles" name="roles">
+                    <option tal:repeat="role view/getRoles"
+                            tal:content="role"
+                            tal:attributes="value role"
+                    />
+                </select>
+                <br/>
+                <br/>
+                <input class="context" type="submit" value="Push" />
+            </form>
+        </fieldset>
+    </div>
+  </body>
+</html>
