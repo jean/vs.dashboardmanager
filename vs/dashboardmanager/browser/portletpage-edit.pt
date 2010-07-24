@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="vs.dashboardmanager">
+<body>
+
+<metal:css fill-slot="style_slot">
+    <style type="text/css" media="all"
+            tal:content="string: @import url(${context/++resource++collective.portletpage.css});"></style>
+</metal:css>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+
+        <h1 class="documentFirstHeading">
+            Manage Portlet Page portlets
+        </h1>
+
+        <p>
+           Use the controls below to change the portlets assigned to the
+           page.
+        </p>
+
+        <div id="portletPageColumns">
+
+            <div
+                id="portletPageColum1"
+                tal:content="structure provider:collective.portletpage.column1"
+                />
+
+            <div
+                id="portletPageColum2"
+                tal:content="structure provider:collective.portletpage.column2"
+                />
+
+            <div
+                id="portletPageColum3"
+                tal:content="structure provider:collective.portletpage.column3"
+                />
+            <div
+                id="portletPageColum4"
+                tal:content="structure provider:collective.portletpage.column4"
+                />
+        </div>
+
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>
