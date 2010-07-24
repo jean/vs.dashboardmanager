@@ -2,6 +2,7 @@
 <object name="Portlet Page"
    meta_type="Factory-based Type Information with dynamic views"
    i18n:domain="collective.portletpage" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <property name="default_view">dashboard-view</property>
  <action title="Assignment" action_id="assignment" category="object" condition_expr=""
     url_expr="string:${object_url}/@@assignment" visible="True">
   <permission value="Modify portal content"/>

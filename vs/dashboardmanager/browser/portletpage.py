@@ -5,7 +5,7 @@ class Base(BrowserView):
     """Base class for index page views
     """
 
-class TwoColumns(Base):
+class PortletPageView(Base):
     """Default view for PortletPage """
     
     __call__ = ViewPageTemplateFile('portletpage.pt')

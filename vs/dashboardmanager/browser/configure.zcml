@@ -43,7 +43,7 @@
 
   <browser:page
     for="collective.portletpage.interfaces.IPortletPage"
-    name="@@dashboard-view"
+    name="dashboard-view"
     class=".portletpage.PortletPageView"
     permission="zope2.View"
   />
