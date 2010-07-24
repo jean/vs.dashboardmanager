@@ -51,4 +51,4 @@ class ManagePortlets(ManageContextualPortlets):
         # Skip past the main parent constructor, since it sets disable_border
         super(ManageContextualPortlets, self).__init__(context, request)
     
-    __call__ = ViewPageTemplateFile('manage-portletpage-portlets.pt')
+    __call__ = ViewPageTemplateFile('portletpage-edit.pt')

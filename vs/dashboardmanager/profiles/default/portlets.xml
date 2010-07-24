@@ -4,23 +4,23 @@
     <!-- Columns (portlet managers) -->
   
     <portletmanager 
-        name="collective.portletpage.column1" 
-        type="collective.portletpage.interfaces.IPortletPageColumn"
+        name="vs.dashboardmanager.column1" 
+        type="vs.dashboardmanager.interfaces.IPortletPageColumn"
         />
   
     <portletmanager 
-        name="collective.portletpage.column2" 
-        type="collective.portletpage.interfaces.IPortletPageColumn"
+        name="vs.dashboardmanager.column2" 
+        type="vs.dashboardmanager.interfaces.IPortletPageColumn"
         />
     
     <portletmanager 
-        name="collective.portletpage.column3" 
-        type="collective.portletpage.interfaces.IPortletPageColumn"
+        name="vs.dashboardmanager.column3" 
+        type="vs.dashboardmanager.interfaces.IPortletPageColumn"
         />
         
     <portletmanager 
-        name="collective.portletpage.column4" 
-        type="collective.portletpage.interfaces.IPortletPageColumn"
+        name="vs.dashboardmanager.column4" 
+        type="vs.dashboardmanager.interfaces.IPortletPageColumn"
         />
    
 </portlets>

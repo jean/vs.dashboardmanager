@@ -48,6 +48,18 @@
     permission="zope2.View"
   />
 
+  <browser:page
+    for="collective.portletpage.interfaces.IPortletPage"
+    name="dashboard-edit"
+    class=".portletpage_edit.ManagePortlets"
+    permission="cmf.ModifyPortalContent"
+  />
+
+  <adapter 
+    factory=".portletpage_edit.PortletPageColumn"
+    provides="plone.portlets.interfaces.IPortletManagerRenderer"
+  />
+
   <browser:resourceDirectory
       name="vs.dashboardmanager.stylesheets"
       directory="stylesheets"
