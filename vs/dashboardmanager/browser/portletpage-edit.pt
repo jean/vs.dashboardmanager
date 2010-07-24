@@ -4,13 +4,17 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="context/main_template/macros/master"
-      i18n:domain="vs.dashboardmanager">
+      i18n:domain="collective.portletpage">
 <body>
 
 <metal:css fill-slot="style_slot">
     <style type="text/css" media="all"
             tal:content="string: @import url(${context/++resource++collective.portletpage.css});"></style>
 </metal:css>
+<metal:js fill-slot="javascript_head_slot">
+    <link type="text/css" rel="kinetic-stylesheet"
+        tal:attributes="href string:${context/absolute_url}/++resource++manage-portlets.kss"/>
+</metal:js>
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main">
@@ -27,23 +31,29 @@
         <div id="portletPageColumns">
 
             <div
-                id="portletPageColum1"
-                tal:content="structure provider:vs.dashboardmanager.column1"
+                id="portletPageTopRow"
+                tal:content="structure provider:collective.portletpage.toprow"
+                />
+
+            <hr />
+
+            <div
+                id="portletPageSecondColumn"
+                tal:content="structure provider:collective.portletpage.secondcolumn"
                 />
 
             <div
-                id="portletPageColum2"
-                tal:content="structure provider:vs.dashboardmanager.column2"
+                id="portletPageFirstColumn"
+                tal:content="structure provider:collective.portletpage.firstcolumn"
                 />
 
+            <hr />
+
             <div
-                id="portletPageColum3"
-                tal:content="structure provider:vs.dashboardmanager.column3"
-                />
-            <div
-                id="portletPageColum4"
+                id="portletPageBottomRow"
                 tal:content="structure provider:vs.dashboardmanager.column4"
                 />
+
         </div>
 
 

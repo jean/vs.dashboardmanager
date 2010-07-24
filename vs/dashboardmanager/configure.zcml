@@ -11,6 +11,8 @@
   <include file="profiles.zcml" />
   <i18n:registerTranslations directory="locales" />
 
+  <adapter factory=".portlets.PortletPageRetriever" />
+
   <!-- AT schema extenders -->
   <include package="archetypes.schemaextender" />
   <adapter factory=".extenders.PortletPageExtender" />

@@ -38,7 +38,7 @@ class PortletPageColumn(ColumnPortletManagerRenderer):
         while normal_title in self.ids:
             normal_title += '-x'
         self.ids.add(normal_title)
-            
+
         return 'column-%s-portlet-%s' % (normal_manager, normal_title,)
     
 class ManagePortlets(ManageContextualPortlets):
