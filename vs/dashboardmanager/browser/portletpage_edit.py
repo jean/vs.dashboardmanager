@@ -7,7 +7,7 @@ from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from plone.app.portlets.manager import ColumnPortletManagerRenderer
 from plone.app.portlets.browser.manage import ManageContextualPortlets
 
-from collective.portletpage.interfaces import IPortletPageColumn
+from vs.dashboardmanager.interfaces import IPortletPageColumn
 from collective.portletpage.browser.interfaces import IManagePortletPagePortletsView
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
