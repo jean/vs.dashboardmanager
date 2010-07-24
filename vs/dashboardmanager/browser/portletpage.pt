@@ -33,22 +33,22 @@
 
             <div
                 id="portletPageColum1"
-                tal:content="structure provider:collective.portletpage.column1"
+                tal:content="structure provider:vs.dashboardmanager.column1"
                 />
 
             <div
                 id="portletPageColum2"
-                tal:content="structure provider:collective.portletpage.column2"
+                tal:content="structure provider:vs.dashboardmanager.column2"
                 />
 
             <div
                 id="portletPageColum3"
-                tal:content="structure provider:collective.portletpage.column3"
+                tal:content="structure provider:vs.dashboardmanager.column3"
                 />
 
             <div
                 id="portletPageColum3"
-                tal:content="structure provider:collective.portletpage.column3"
+                tal:content="structure provider:vs.dashboardmanager.column3"
                 />
         </div>
 
