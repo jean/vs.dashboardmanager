@@ -32,25 +32,24 @@
         <div id="portletPageColumns">
 
             <div
-                id="portletPageTopRow"
-                tal:content="structure provider:collective.portletpage.toprow"
+                id="portletPageColum1"
+                tal:content="structure provider:collective.portletpage.column1"
                 />
 
             <div
-                id="portletPageSecondColumn"
-                tal:content="structure provider:collective.portletpage.secondcolumn"
+                id="portletPageColum2"
+                tal:content="structure provider:collective.portletpage.column2"
                 />
 
             <div
-                id="portletPageFirstColumn"
-                tal:content="structure provider:collective.portletpage.firstcolumn"
+                id="portletPageColum3"
+                tal:content="structure provider:collective.portletpage.column3"
                 />
 
             <div
-                id="portletPageBottomRow"
-                tal:content="structure provider:collective.portletpage.bottomrow"
+                id="portletPageColum3"
+                tal:content="structure provider:collective.portletpage.column3"
                 />
-
         </div>
 
 
