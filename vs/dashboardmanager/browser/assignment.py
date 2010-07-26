@@ -1,4 +1,6 @@
 
+import operator 
+
 from zope.component import getUtility, getMultiAdapter
 from zope.app.container.interfaces import INameChooser
 from Products.CMFCore.utils import getToolByName
@@ -13,9 +15,11 @@ class AssignmentView(BrowserView):
 
     template = ViewPageTemplateFile('assignment.pt')
 
-    def getRoles(self):
-        mt = getToolByName(self, 'portal_membership')
-        return  sorted([r for r in mt.getPortalRoles() if r != 'Owner'])
+    def getGroups(self):
+        search_view = self.context.restrictedTraverse('@@pas_search')
+        result = search_view.searchGroups()
+        result = sorted(result, key=operator.itemgetter('title')) 
+        return result
 
     def push_assignment(self, userid='', roles=[]):
         """ Push all assignment portlet page assignment into the
