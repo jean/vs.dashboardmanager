@@ -1,3 +1,21 @@
+
+import config
+from cStringIO import StringIO
+from Products.CMFCore.utils import getToolByName
+
+class Generator(object):
+
+    def installProducts(self, p, out):
+        """QuickInstaller install of required Products"""
+        qi = getToolByName(p, 'portal_quickinstaller')
+        for product in config.DEPENDENCIES:
+            if qi.isProductInstalled(product):
+                qi.reinstallProducts([product])
+            else:
+                qi.installProduct(product, locked=0)
+                print >> out, "Product installed: %s \n" %product
+
+
 def setupVarious(context):
 
     # Ordinarily, GenericSetup handlers check for the existence of XML files.
@@ -9,3 +27,10 @@ def setupVarious(context):
         return
 
     # Add additional setup code here
+    out = StringIO()
+    site = context.getSite()
+    gen = Generator()
+    gen.installProducts(site, out)
+    logger = context.getLogger(config.PROJECTNAME)
+    logger.info(out.getvalue())
+
