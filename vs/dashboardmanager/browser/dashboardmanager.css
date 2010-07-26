@@ -1,0 +1,11 @@
+/* Style sheet used for the portlet page
+ */
+ 
+#portletPageFirstColumn {
+    width: 50%;
+}
+
+#portletPageSecondColumn {
+    float: right;
+    width: 50%;
+}

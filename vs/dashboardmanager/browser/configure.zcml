@@ -60,10 +60,9 @@
     provides="plone.portlets.interfaces.IPortletManagerRenderer"
   />
 
-  <browser:resourceDirectory
-      name="vs.dashboardmanager.stylesheets"
-      directory="stylesheets"
-      layer=".interfaces.IThemeSpecific"
+  <browser:resource
+      name="vs.dashboardmanager.css"
+      file="dashboardmanager.css"
       />
 
 </configure>
