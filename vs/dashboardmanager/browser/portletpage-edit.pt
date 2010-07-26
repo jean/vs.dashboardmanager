@@ -29,28 +29,27 @@
         </p>
 
         <div id="portletPageColumns">
-
+Manager 1:
             <div
-                id="portletPageTopRow"
-                tal:content="structure provider:collective.portletpage.toprow"
+                id="portletColumn1"
+                tal:content="structure provider:vs.dashboardmanager.column1"
                 />
 
-            <hr />
-
+Manager 2:
             <div
-                id="portletPageSecondColumn"
-                tal:content="structure provider:collective.portletpage.secondcolumn"
+                id="portletColumn2"
+                tal:content="structure provider:vs.dashboardmanager.column2"
                 />
 
+Manager 3:
             <div
-                id="portletPageFirstColumn"
-                tal:content="structure provider:collective.portletpage.firstcolumn"
+                id="portletColumn3"
+                tal:content="structure provider:vs.dashboardmanager.column3"
                 />
 
-            <hr />
-
+Manager 4:
             <div
-                id="portletPageBottomRow"
+                id="portletColumn4"
                 tal:content="structure provider:vs.dashboardmanager.column4"
                 />
 

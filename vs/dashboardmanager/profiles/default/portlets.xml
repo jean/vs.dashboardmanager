@@ -5,22 +5,22 @@
   
     <portletmanager 
         name="vs.dashboardmanager.column1" 
-        type="vs.dashboardmanager.interfaces.IPortletPageColumn"
+        type="vs.dashboardmanager.interfaces.IPortletPageColumn1"
         />
   
     <portletmanager 
         name="vs.dashboardmanager.column2" 
-        type="vs.dashboardmanager.interfaces.IPortletPageColumn"
+        type="vs.dashboardmanager.interfaces.IPortletPageColumn2"
         />
     
     <portletmanager 
         name="vs.dashboardmanager.column3" 
-        type="vs.dashboardmanager.interfaces.IPortletPageColumn"
+        type="vs.dashboardmanager.interfaces.IPortletPageColumn3"
         />
         
     <portletmanager 
         name="vs.dashboardmanager.column4" 
-        type="vs.dashboardmanager.interfaces.IPortletPageColumn"
+        type="vs.dashboardmanager.interfaces.IPortletPageColumn4"
         />
    
 </portlets>
