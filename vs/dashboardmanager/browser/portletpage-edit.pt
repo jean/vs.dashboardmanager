@@ -7,10 +7,6 @@
       i18n:domain="collective.portletpage">
 <body>
 
-<metal:css fill-slot="style_slot">
-    <style type="text/css" media="all"
-            tal:content="string: @import url(${context/++resource++vs.dashboardmanager.css});"></style>
-</metal:css>
 <metal:js fill-slot="javascript_head_slot">
     <link type="text/css" rel="kinetic-stylesheet"
         tal:attributes="href string:${context/absolute_url}/++resource++manage-portlets.kss"/>
