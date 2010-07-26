@@ -29,33 +29,27 @@
 
         <div tal:condition="text" metal:use-macro="python:context.widget('text', mode='view')" />
 
-        <div id="portletPageColumns">
-Manager 1:
-            <div
-                id="portletColumn1"
-                tal:content="structure provider:vs.dashboardmanager.column1"
-                />
+        <table>
+            <tbody>
+                <tr>
+                    <td id="portletColumn1" class="portletColumn" valign="top"
+                        tal:content="structure provider:vs.dashboardmanager.column1"
+                        />
 
-Manager 2:
-            <div
-                id="portletColumn2"
-                tal:content="structure provider:vs.dashboardmanager.column2"
-                />
+                    <td id="portletColumn2"  class="portletColumn"   valign="top"
+                        tal:content="structure provider:vs.dashboardmanager.column2"
+                        />
 
-Manager 3:
-            <div
-                id="portletColumn3"
-                tal:content="structure provider:vs.dashboardmanager.column3"
-                />
+                    <td id="portletColumn3"  class="portletColumn"  valign="top"
+                        tal:content="structure provider:vs.dashboardmanager.column3"
+                        />
 
-Manager 4:
-            <div
-                id="portletColumn4"
-                tal:content="structure provider:vs.dashboardmanager.column4"
-                />
-        </div>
-
-
+                    <td id="portletColumn4"   class="portletColumn"   valign="top"
+                        tal:content="structure provider:vs.dashboardmanager.column4"
+                        />
+                </tr>
+            </tbody>
+        </table>
         <a tal:attributes="href string:$portal_url/@@dashboard-manager">
             Back to dashboard manager
         </a>
