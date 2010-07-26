@@ -16,7 +16,6 @@
       title="vs.dashboardmanager: miscellaneous import steps"
       description="Various import steps that are not handled by GS import/export handlers."
       handler="vs.dashboardmanager.setuphandlers.setupVarious">
-    <depends name="skins"/>
   </genericsetup:importStep>
 
 </configure>
