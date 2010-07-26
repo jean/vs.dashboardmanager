@@ -21,30 +21,41 @@ class AssignmentView(BrowserView):
         result = sorted(result, key=operator.itemgetter('title')) 
         return result
 
-    def push_assignment(self, userid='', roles=[]):
+    def push_assignment(self, userid='', group=''):
         """ Push all assignment portlet page assignment into the
             dashboard of a user or a group of users.
         """
 
         site = getUtility(ISiteRoot)
+        if userid:
+            userids = [userid]
+        else:
+            gt = getToolByName(self.context, 'portal_groups')
+            mt = getToolByName(self.context, 'portal_membership')
+            userids = [mt.getMemberById(m).getUserName() for m in gt.getGroupMembers(group)]
 
-        # iterate over all configured portlet managers for PortletPage
-        for i in range(1, 5):
+        for userid in userids:
 
-            manager_name = 'vs.dashboardmanager.column%d' % i
-            manager = getUtility(IPortletManager, name=manager_name, context= self.context)
-            mapping = getMultiAdapter((self.context, manager), IPortletAssignmentMapping)
+            # iterate over all configured portlet managers for PortletPage
+            for i in range(1, 5):
 
-            # get hold of the user dashboard manager
-            manager2 = getUtility(IPortletManager, name='plone.dashboard%d' % i)
-            mapping2 = assignment_mapping_from_key(site, 
-                                                  'plone.dashboard%d' % i, 
-                                                   category='user', 
-                                                   key=userid, 
-                                                   create=True)
-            # and copy over the assignments
-            for id, assignment in mapping.items():
-                mapping2[id] = assignment
+                manager_name = 'vs.dashboardmanager.column%d' % i
+                manager = getUtility(IPortletManager, name=manager_name, context= self.context)
+                mapping = getMultiAdapter((self.context, manager), IPortletAssignmentMapping)
+
+                # get hold of the user dashboard manager
+                manager2 = getUtility(IPortletManager, name='plone.dashboard%d' % i)
+                mapping2 = assignment_mapping_from_key(site, 
+                                                      'plone.dashboard%d' % i, 
+                                                       category='user', 
+                                                       key=userid, 
+                                                       create=True)
+                ids2 = [tp[0] for tp in mapping2.items()]
+
+                # and copy over the assignments
+                for id, assignment in mapping.items():
+                    if not id in ids2:
+                        mapping2[id] = assignment
 
         return self.request.response.redirect(self.context.absolute_url())
 
