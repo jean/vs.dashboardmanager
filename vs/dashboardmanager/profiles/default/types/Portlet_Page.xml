@@ -6,7 +6,7 @@
  <property name="description" i18n:translate="">Portlet page</property>
  <property name="content_icon">++resource++collective.portletpage_icon.gif</property>
  <property name="content_meta_type">Portlet Page</property>
- <property name="product">vs.dashboardmanager</property>
+ <property name="product">collective.portletpage</property>
  <property name="factory">addPortletPage</property>
  <property name="immediate_view">atct_edit</property>
  <property name="global_allow">True</property>
