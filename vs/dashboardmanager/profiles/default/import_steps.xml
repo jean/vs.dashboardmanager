@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<import-steps>
+ <import-step id="vs.dashboardmanager.various" version="20070318-01"
+              handler="vs.dashboardmanager.setuphandlers.setupVarious"
+              title="vs.dashboard">
+ </import-step>
+ <import-step id="typeinfo" version="20040630-01"
+              handler="Products.CMFCore.exportimport.typeinfo.importTypesTool"
+              title="Types Tool">
+  <dependency step="vs.dashboardmanager.various"/>
+    Import types tool's type information objects.
+ </import-step>
+</import-steps>
