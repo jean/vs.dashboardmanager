@@ -36,6 +36,14 @@ class AssignmentView(BrowserView):
             dashboard of a user or a group of users.
         """
 
+        if userid and group:
+            self.context.plone_utils.addPortalMessage(u'Please specify either a member or a group - but not both', 'error')
+            return self.request.response.redirect(self.context.absolute_url() + '/@@assignment')
+
+        if not userid and not group:
+            self.context.plone_utils.addPortalMessage(u'Please specify either a member or a group', 'error')
+            return self.request.response.redirect(self.context.absolute_url() + '/@@assignment')
+
         site = getUtility(ISiteRoot)
         if userid:
             userids = [userid]
@@ -44,9 +52,10 @@ class AssignmentView(BrowserView):
             mt = getToolByName(self.context, 'portal_membership')
             userids = [mt.getMemberById(m).getUserName() for m in gt.getGroupMembers(group)]
 
+        dashboards_updated = dict()
         for userid in userids:
 
-            # iterate over all configured portlet managers for PortletPage
+            # iterate over all configured portlet managers (1-4) for PortletPage
             for i in range(1, 5):
 
                 manager_name = 'vs.dashboardmanager.column%d' % i
@@ -67,8 +76,13 @@ class AssignmentView(BrowserView):
                     if not id in ids2:
                         mapping2[id] = assignment
                         LOG.info('assigned portlet %s to %s' % (id, userid))
+                        dashboards_updated[userid] = True
 
-        self.context.plone_utils.addPortalMessage(u'Dashboard(s) updated')
+        if dashboards_updated:
+            self.context.plone_utils.addPortalMessage(u'Dashboard(s) updated for members: %s' 
+                                                      % ', '.join(dashboards_updated.keys()))
+        else:
+            self.context.plone_utils.addPortalMessage(u'No dashboards updated')
         return self.request.response.redirect(self.context.absolute_url())
 
 
