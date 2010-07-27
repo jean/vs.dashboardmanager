@@ -9,6 +9,10 @@
 
         <h1>vs.dashboardmanager</h1>
 
+        <div class="warning" tal:condition="not: templates">
+            <span i18n:translate="label_no_portletpage_templates available">No portletpage template available</span>
+        </div>
+
         <table class="listing" tal:condition="templates">
             <thead>
                 <tr>   
@@ -30,7 +34,7 @@
             </tbody>
         </table>
 
-        <a tal:attributes="href string:$portal_url/@@new-dashboard-page">New dashboard page</a>
+        <a tal:attributes="href string:$portal_url/@@new-dashboard-page" i18n:translate="label_new_portletpage_template">Create new portletpage template</a>
 
     </div>
   </body>
