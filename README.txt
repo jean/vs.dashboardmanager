@@ -8,7 +8,7 @@ dashboard of individual site members or all members of a Plone group.
 Installation
 ============
 
-* add ``vs.dashboardmanager`` to the ``eggs`` and ```zcml`` options of 
+* add ``vs.dashboardmanager`` to the ``eggs`` and ``zcml`` options of 
   your buildout.cfg and re-run buildout
 
 * either create a new Plone site using the ``vs.dashboardmanager`` extension profile
