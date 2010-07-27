@@ -3,7 +3,9 @@ vs.dashboardmanager
 
 ``vs.dashboardmanager`` provides a templating mechanism for dashboard pages and
 a push mechanism for transfering portlets of dashboard template pages into the
-dashboard of individual site members or all members of a Plone group.
+dashboard of individual site members or all members of a Plone group. Consider 
+``vs.dashboardmanager`` as a kind of remote adminstration tool for dashboards.
+
 
 Installation
 ============
@@ -39,7 +41,8 @@ Licence
 Credits
 =======
 ``vs.dashboardmanager`` is based and influenced by ``collective.portletpage``
-by Martin Aspeli.
+by Martin Aspeli. ``vs.dashboardmanager`` is uses in parts of
+``collective.portletpage``.
 
 Authors
 =======
