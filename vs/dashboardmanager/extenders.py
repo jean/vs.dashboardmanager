@@ -1,3 +1,4 @@
+import operator
 
 from zope.component import adapts
 from zope.interface import implements, Interface
@@ -17,12 +18,12 @@ class PortletPageExtender(object):
     adapts(IPortletPage)
     implements(ISchemaExtender)
 
-    fields = [MyLinesField('usedForRoles',
+    fields = [MyLinesField('usedForGroups',
                             default=[],
-                            vocabulary='getRoles',
+                            vocabulary='getGroups',
                             widget=MultiSelectionWidget(
-                                label="Used for roles",
-                                label_msgid='used_for_roles',
+                                label="Used for groups",
+                                label_msgid='label_used_for_groups',
                                 i18n_domain='vs.dashboardmanager',
                                 ),
                              ),
@@ -35,16 +36,16 @@ class PortletPageExtender(object):
         return self.fields
 
 
-def getRoles(self):
-    """ return system-wide roles """
-    mt = getToolByName(self, 'portal_membership')
-    roles = sorted([r for r in mt.getPortalRoles() if r != 'Owner'])
-    return DisplayList(zip(roles, roles))
+def getGroups(self):
+    search_view = self.context.restrictedTraverse('@@pas_search')
+    result = search_view.searchGroups()
+    result = sorted(result, key=operator.itemgetter('title')) 
+    return result
 
-def getUsedForRoles(self):
-    return self.getField('usedForRoles').get(self)
+def getUsedForGroups(self):
+    return self.getField('usedForGroups').get(self)
 
 from collective.portletpage.content import PortletPage
-PortletPage.getRoles = getRoles
-PortletPage.getUsedForRoles = getUsedForRoles
+PortletPage.getGroups = getGroups
+PortletPage.getUsedForGroups = getUsedForGroups
 

@@ -56,8 +56,8 @@ class PersonalDashboardView(BrowserView):
 
         result = list()
         for brain in catalog(portal_type='Portlet Page'):
-            page_roles = set(brain.getUsedForRoles)
-            if roles.intersection(page_roles):
+            page_roles = set(brain.getUsedForGroups)
+            if groups.intersection(page_groups):
                 result.append(brain)
 
         return result

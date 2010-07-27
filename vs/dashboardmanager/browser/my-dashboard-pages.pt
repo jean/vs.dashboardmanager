@@ -13,7 +13,7 @@
             <thead>
                 <tr>   
                     <th>Dashboard page</th>   
-                    <th>Used for roles</th>   
+                    <th>Used for groups</th>   
                 </tr>   
             </thead>
 
@@ -23,7 +23,7 @@
                         <a tal:attributes="href string:${template/getURL}" 
                            tal:content="template/Title" />
                     </td> 
-                    <td tal:content="python: ', '.join(template.getUsedForRoles)"/>
+                    <td tal:content="python: ', '.join(template.getUsedForGroups)"/>
                 </tr>
             </tbody>
         </table>
