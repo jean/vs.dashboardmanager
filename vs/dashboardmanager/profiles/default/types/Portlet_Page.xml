@@ -37,6 +37,4 @@
     url_expr="string:${object_url}/@@assignment" visible="True">
   <permission value="Modify portal content"/>
  </action>
-  <permission value="Modify portal content"/>
- </action>
 </object>
