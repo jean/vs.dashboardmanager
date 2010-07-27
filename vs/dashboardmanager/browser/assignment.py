@@ -11,6 +11,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.portlets.interfaces import IPortletManager, IPortletAssignment, IPortletAssignmentMapping
 from plone.app.portlets.utils import assignment_mapping_from_key
 
+from vs.dashboardmanager import MF as _
+
 class AssignmentView(BrowserView):
 
     template = ViewPageTemplateFile('assignment.pt')
