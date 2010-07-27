@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.1.2'
+version = '0.1.3'
 
 setup(name='vs.dashboardmanager',
       version=version,
@@ -31,7 +31,6 @@ setup(name='vs.dashboardmanager',
       ],
       entry_points="""
       # -*- Entry points: -*-
-
       [z3c.autoinclude.plugin]
       target = plone
       """,
