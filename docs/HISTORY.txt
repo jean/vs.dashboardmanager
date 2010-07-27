@@ -1,6 +1,16 @@
 Changelog
 =========
 
+0.1.2 (2010-07-27)
+------------------
+- i18n
+- code cleanup
+- moving from roles to groups
+- removed virtual groups from selections
+- some cleanup
+- logger support
+- rephrasing of texts
+
 0.1.1 (2010-07-26)
 ------------------
 - skin cleanup
