@@ -1,3 +1,10 @@
+################################################################
+# vs.dashboardmanager
+# (C) 2010, Veit Schiele & Andreas Jung
+# Published under the GNU Public Licence V 2 (GPL 2)
+################################################################
+
+
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets.common import ViewletBase
 

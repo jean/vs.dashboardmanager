@@ -1,3 +1,8 @@
+################################################################
+# vs.dashboardmanager
+# (C) 2010, Veit Schiele & Andreas Jung
+# Published under the GNU Public Licence V 2 (GPL 2)
+################################################################
 
 import operator 
 
@@ -12,14 +17,17 @@ from plone.portlets.interfaces import IPortletManager, IPortletAssignment, IPort
 from plone.app.portlets.utils import assignment_mapping_from_key
 
 from vs.dashboardmanager import MF as _
+from vs.dashboardmanager.logger import LOG
 
 class AssignmentView(BrowserView):
 
     template = ViewPageTemplateFile('assignment.pt')
 
     def getGroups(self):
+        """ Return PAS groups """
         search_view = self.context.restrictedTraverse('@@pas_search')
         result = search_view.searchGroups()
+        result = [r for r in result if not r['pluginid'] in ('auto_group',)]
         result = sorted(result, key=operator.itemgetter('title')) 
         return result
 
@@ -58,7 +66,9 @@ class AssignmentView(BrowserView):
                 for id, assignment in mapping.items():
                     if not id in ids2:
                         mapping2[id] = assignment
+                        LOG.info('assigned portlet %s to %s' % (id, userid))
 
+        self.context.plone_utils.addPortalMessage(u'Dashboard(s) updated')
         return self.request.response.redirect(self.context.absolute_url())
 
 

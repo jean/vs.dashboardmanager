@@ -1,3 +1,10 @@
+################################################################
+# vs.dashboardmanager
+# (C) 2010, Veit Schiele & Andreas Jung
+# Published under the GNU Public Licence V 2 (GPL 2)
+################################################################
+
+
 import time
 
 from AccessControl import getSecurityManager
@@ -12,9 +19,6 @@ class ManagementView(BrowserView):
 
     template = ViewPageTemplateFile('management.pt')
     template_folder_id = 'dashboard-templates'
-
-    def foo(self):
-        return 'bar'
 
     def available_dashboard_pages(self):
         """ return list of available dashboard templates """
@@ -32,7 +36,7 @@ class ManagementView(BrowserView):
         if not self.template_folder_id in portal_root.objectIds():
             portal_root.invokeFactory('Folder', id=self.template_folder_id)
             folder = portal_root[self.template_folder_id]
-            folder.setTitle(_(u'label_dashboard_templates', u'Dashboard templates'))
+            folder.setTitle(_(u'Dashboard templates'))
             folder.reindexObject()
         else:
             folder = portal_root[self.template_folder_id]

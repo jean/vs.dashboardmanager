@@ -1,3 +1,10 @@
+################################################################
+# vs.dashboardmanager
+# (C) 2010, Veit Schiele & Andreas Jung
+# Published under the GNU Public Licence V 2 (GPL 2)
+################################################################
+
+
 import operator
 
 from zope.component import adapts
@@ -37,10 +44,11 @@ class PortletPageExtender(object):
 
 
 def getGroups(self):
-    search_view = self.context.restrictedTraverse('@@pas_search')
+    search_view = self.restrictedTraverse('@@pas_search')
     result = search_view.searchGroups()
-    result = sorted(result, key=operator.itemgetter('title')) 
-    return result
+    result = [r['title'] for r in result if not r['pluginid'] in ('auto_group', )]
+    result = sorted(result)
+    return DisplayList(zip(result, result))
 
 def getUsedForGroups(self):
     return self.getField('usedForGroups').get(self)
