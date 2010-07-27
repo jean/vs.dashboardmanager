@@ -1,0 +1,23 @@
+# ========================================================
+# = Provide renderer for non-inheriting portlet managers =
+# ========================================================
+
+class NoninheritingPortletManagerRenderer(PortletManagerRenderer) :
+    """ This custom version of ColumnPortletManagerRenderer points to a new 
+    template so that HTML can be customised. 
+    """
+    adapts(Interface, IThemeSpecific, IBrowserView, INoninheritingPortletManager)
+    template = ViewPageTemplateFile('templates/ni-column.pt')
+
+    def can_manage_portlets(self):
+        context = self._context()
+        if not ILocalPortletAssignable.providedBy(context):
+            return False
+        mtool = getToolByName(context, 'portal_membership')
+        return mtool.checkPermission("Portlets: Manage portlets", context)
+
+class NoninheritingEditPortletManagerRenderer(EditPortletManagerRenderer):
+    """To allow edit support of the above.
+    """
+    adapts(Interface, IThemeSpecific, IManageContextualPortletsView, INoninheritingPortletManager)
+    template = ViewPageTemplateFile('templates/ni-edit-column.pt')
