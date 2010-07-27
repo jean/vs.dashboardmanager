@@ -18,8 +18,8 @@
                 <select id="group" name="group">
                     <option value="" i18n:translate="label_please_select">Please select...</option>
                     <option tal:repeat="group view/getGroups"
-                        tal:content="group/title"
-                        tal:attributes="value group/title"
+                        tal:content="group/id"
+                        tal:attributes="value group/id"
                         />
                 </select>
                 <br/>

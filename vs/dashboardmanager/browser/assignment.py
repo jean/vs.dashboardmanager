@@ -51,6 +51,10 @@ class AssignmentView(BrowserView):
         if userid:
             userids = [userid]
         else:
+            # convert this to PAS
+            # acl = self.context.acl_users
+            # grp = acl.getGroupById(group)
+            # memberids = grp.getMemberIds()
             userids = [mt.getMemberById(m).getUserName() for m in gt.getGroupMembers(group)]
 
         dashboards_updated = dict()
