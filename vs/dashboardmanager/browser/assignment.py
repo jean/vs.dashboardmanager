@@ -36,6 +36,9 @@ class AssignmentView(BrowserView):
             dashboard of a user or a group of users.
         """
 
+        gt = getToolByName(self.context, 'portal_groups')
+        mt = getToolByName(self.context, 'portal_membership')
+
         if userid and group:
             self.context.plone_utils.addPortalMessage(u'Please specify either a member or a group - but not both', 'error')
             return self.request.response.redirect(self.context.absolute_url() + '/@@assignment')
@@ -48,8 +51,6 @@ class AssignmentView(BrowserView):
         if userid:
             userids = [userid]
         else:
-            gt = getToolByName(self.context, 'portal_groups')
-            mt = getToolByName(self.context, 'portal_membership')
             userids = [mt.getMemberById(m).getUserName() for m in gt.getGroupMembers(group)]
 
         dashboards_updated = dict()
@@ -69,6 +70,7 @@ class AssignmentView(BrowserView):
                                                        category='user', 
                                                        key=userid, 
                                                        create=True)
+
                 ids2 = [tp[0] for tp in mapping2.items()]
 
                 # and copy over the assignments
@@ -88,5 +90,3 @@ class AssignmentView(BrowserView):
 
     def __call__(self, *args, **kw):
         return self.template(*args, **kw)
-
-
