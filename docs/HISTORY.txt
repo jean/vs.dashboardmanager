@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.2.1 (2010-07-27)
+------------------
+- fixed retrieval of group members in assignment code
+
 0.2.0 (2010-07-27)
 ------------------
 - Plone 4 compatibility
