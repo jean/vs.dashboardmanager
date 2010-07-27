@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.1.5 (2010-07-27)
+------------------
+- disabled @@my-dashboard-pages view
+- minor cleanup
+
 0.1.4 (2010-07-27)
 ------------------
 - UI tweak

@@ -17,6 +17,8 @@
   <!-- AT schema extenders -->
   <include package="collective.portletpage" />
   <include package="archetypes.schemaextender" />
+  <!--
   <adapter factory=".extenders.PortletPageExtender" />
+  -->
 
 </configure>

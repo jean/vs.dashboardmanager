@@ -24,8 +24,9 @@
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
+        <!--
         <label>Used for groups </label>: <span tal:replace="python: ', '.join(context.getUsedForGroups())" />
-        
+        -->
 
         <div tal:condition="text" metal:use-macro="python:context.widget('text', mode='view')" />
 
