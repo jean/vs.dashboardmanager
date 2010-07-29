@@ -2,13 +2,28 @@
       lang="en-US"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="vs.dashboardmanager">
-
   <body>
+
     <div metal:fill-slot="main">
+
+        <script type="text/javascript" tal:content="string:var URL = '${context/absolute_url}'"></script>
+        
+        <script type="text/javascript">
+
+            function filter_groups() {
+                $j = jQuery.noConflict();
+                var name = $j('#group-filter').val();
+                window.location.href = URL + '/@@assignment?name=' + name;
+            }
+
+        </script>
+
+
         <fieldset> 
             <legend i18n:translate="label_assign_portlets">Assign portlets to the dashboard(s) of a member or a group of members</legend>
 
-            <form method="post" tal:attributes="action string:${context/absolute_url}/@@push-assignment" >
+            <form method="post" tal:attributes="action string:${context/absolute_url}/@@push-assignment" 
+                tal:define="groups view/getGroups">
                 <label for="userid" i18:translate="label_member">Member</label>
                 <input type="text" name="userid" id="userid" size="20" />
                 <br/>
@@ -17,11 +32,19 @@
                 <label for="group" i18:translate="label_group">Group</label>
                 <select id="group" name="group">
                     <option value="" i18n:translate="label_please_select">Please select...</option>
-                    <option tal:repeat="group view/getGroups"
+                    <option tal:repeat="group groups"
                         tal:content="group/id"
                         tal:attributes="value group/id"
                         />
                 </select>
+                <span tal:content="python: len(groups)" /> 
+                (<span i18n:translate="label_number_groups_found">groups found</span>)
+                <input type="text" name="name" size="20" value="" 
+                       tal:attributes="value request/name | nothing"
+                       id="group-filter"/>
+                <input class="context" type="button" 
+                       onclick="javascript:filter_groups()" i18n:attributes="value label_filter_groups" value="Filter groups " />
+
                 <br/>
                 <br/>
                 <input class="context" type="submit" i18n:attributes="label_button_assign_portlets" value="Assign portlets to dashboard(s)" />

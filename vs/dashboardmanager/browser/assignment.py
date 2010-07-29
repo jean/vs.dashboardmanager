@@ -23,10 +23,13 @@ class AssignmentView(BrowserView):
 
     template = ViewPageTemplateFile('assignment.pt')
 
-    def getGroups(self):
+    def getGroups(self): 
         """ Return PAS groups """
         search_view = self.context.restrictedTraverse('@@pas_search')
-        result = search_view.searchGroups()
+        if 'name' in self.request:
+            result = search_view.searchGroups(name=self.request.name)
+        else:
+            result = search_view.searchGroups()
         result = [r for r in result if not r['pluginid'] in ('auto_group',)]
         result = sorted(result, key=operator.itemgetter('title')) 
         return result
