@@ -4,6 +4,7 @@
 # Published under the GNU Public Licence V 2 (GPL 2)
 ################################################################
 
+import demjson
 import operator 
 
 from zope.component import getUtility, getMultiAdapter
@@ -22,6 +23,14 @@ from vs.dashboardmanager.logger import LOG
 class Assignments(BrowserView):
 
     template = ViewPageTemplateFile('assignments.pt')
+
+    def groups_by_substring(self, q):
+        """ Callback for AJAX (auto-completion) """
+        q = q.lower()
+        groups = self.getGroups()
+        result = [group['id'] for group in groups if q in group['id'].lower()]
+        return demjson.encode(result)
+
 
     def getGroups(self): 
         """ Return PAS groups """

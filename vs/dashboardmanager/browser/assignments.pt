@@ -11,10 +11,15 @@
         <script type="text/javascript">
             var  $j = jQuery.noConflict();
 
+            $j(document).ready(function() {
+                $j("#group-filter").autocomplete(URL + '/@@groups-by-substring');
+            });
+
             function filter_groups() {
                 var name = $j('#group-filter').val();
                 window.location.href = URL + '/@@assignments?name=' + name;
             }
+            
             function view_assignments() {
                 var userid = $j('#userid').val();
                 var group = $j('#group').val();
