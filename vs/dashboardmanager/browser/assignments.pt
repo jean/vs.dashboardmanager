@@ -13,7 +13,7 @@
 
             function filter_groups() {
                 var name = $j('#group-filter').val();
-                window.location.href = URL + '/@@assignment?name=' + name;
+                window.location.href = URL + '/@@assignments?name=' + name;
             }
             function view_assignments() {
                 var userid = $j('#userid').val();
