@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.2.5 (2010-07-30)
+------------------
+- added simple dashboard introspection for a single user
+  or all users of a group
+
 0.2.4 (2010-07-30)
 ------------------
 - better PAS integration
