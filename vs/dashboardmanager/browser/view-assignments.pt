@@ -4,9 +4,42 @@
       i18n:domain="vs.dashboardmanager">
   <body>
 
-      <div metal:fill-slot="main">
+    <div metal:fill-slot="main">
 
-          <h1 i18n:translate="label_portlet_assignments">Portlet assignments</h1>
+        <h1 i18n:translate="label_portlet_assignments">Portlet assignments in dashboard(s)</h1>
+        <label i18:translate="label_userid">User</label>:
+        <span tal:replace="request/userid | nothing" />
+        <br/>
+        <label i18:translate="label_group">Group</label>:
+        <span tal:replace="request/group | nothing" />
+
+        <dl>
+            <tal:loop repeat="row view/get_assignments">
+                <dt tal:content="row/userid" />
+                <dd>
+                    <table class="listing">
+                        <thead>
+                            <tr>
+                                <tal:loop repeat="row2 row/dashboards">
+                                    <th tal:content="row2/manager" />
+                                </tal:loop>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <tal:loop repeat="row2 row/dashboards">
+                                    <td>
+                                        <div tal:repeat="d row2/portlets"
+                                            tal:content="d/portlet_id" 
+                                        />
+                                    </td>
+                                </tal:loop>
+                            </tr>
+                        </tbody>
+                    </table>
+                </dd>
+            </tal:loop>
+        </dl>
 
     </div>
   </body>

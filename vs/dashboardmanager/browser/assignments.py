@@ -36,10 +36,14 @@ class Assignments(BrowserView):
         result = sorted(result, key=operator.itemgetter('title')) 
         return result
 
-    def push_assignment(self, userid='', group=''):
-        """ Push all assignment portlet page assignment into the
-            dashboard of a user or a group of users.
+
+    def _get_memberids_from_request(self):
+        """ Return a list of userids based on the 'group' and 'userid'
+            parameters from the request.
         """
+
+        userid = self.request.get('userid', '')
+        group = self.request.get('group', '')
 
         gt = getToolByName(self.context, 'portal_groups')
         mt = getToolByName(self.context, 'portal_membership')
@@ -59,6 +63,16 @@ class Assignments(BrowserView):
             acl = self.context.acl_users
             grp = acl.getGroupById(group)
             userids = grp.getMemberIds()
+
+        return userids
+
+
+    def push_assignment(self):
+        """ Push all assignment portlet page assignment into the
+            dashboard of a user or a group of users.
+        """
+
+        userids = self._get_memberids_from_request()
 
         dashboards_updated = dict()
         for userid in userids:
@@ -98,6 +112,37 @@ class Assignments(BrowserView):
     def __call__(self, *args, **kw):
         return self.template(*args, **kw)
 
+
 class ViewAssignments(Assignments):
 
     template = ViewPageTemplateFile('view-assignments.pt')
+
+    def get_assignments(self):
+        """ Return dashboard settings for a given group or a user """
+
+        userids = self._get_memberids_from_request()
+        site = getUtility(ISiteRoot)
+
+        user2dash = list()
+        for userid in userids:
+            # iterate over the four portlet managers in each user dashboard
+            dash2portlets = list()
+            for i in range(1, 5):
+                # get hold of the user dashboard manager
+                manager_name = 'plone.dashboard%d' % i
+                manager = getUtility(IPortletManager, name=manager_name)
+                mapping = assignment_mapping_from_key(site, 
+                                                      manager_name,
+                                                      category='user', 
+                                                      key=userid, 
+                                                      create=True)
+                portlets = list()
+                for portlet_id in mapping:
+                    portlets.append(dict(portlet_id=portlet_id, assignment=mapping[portlet_id]))
+
+                dash2portlets.append(dict(manager=manager_name, portlets=portlets))
+            user2dash.append(dict(userid=userid, dashboards=dash2portlets))
+
+        return user2dash
+
+
