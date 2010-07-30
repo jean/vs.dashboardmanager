@@ -29,7 +29,7 @@ class Assignments(BrowserView):
         q = q.lower()
         groups = self.getGroups()
         result = [group['id'] for group in groups if q in group['id'].lower()]
-        return demjson.encode(result)
+        return '\n'.join(result)
 
 
     def getGroups(self): 

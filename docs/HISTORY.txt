@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.2.6 (2010-07-30)
+------------------
+- auto-completion for group filter
+
 0.2.5 (2010-07-30)
 ------------------
 - added simple dashboard introspection for a single user
