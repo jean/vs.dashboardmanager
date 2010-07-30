@@ -27,7 +27,6 @@ setup(name='vs.dashboardmanager',
           'setuptools',
           'collective.portletpage',
           'archetypes.schemaextender',
-          'demjson',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
