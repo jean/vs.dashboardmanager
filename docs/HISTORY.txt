@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.2.4 (2010-07-30)
+------------------
+- better PAS integration
+
 0.2.3 (2010-07-30)
 ------------------
 - group filter now working with LDAP
