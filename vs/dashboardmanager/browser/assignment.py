@@ -27,7 +27,9 @@ class AssignmentView(BrowserView):
         """ Return PAS groups """
         search_view = self.context.restrictedTraverse('@@pas_search')
         if 'name' in self.request:
-            result = search_view.searchGroups(name=self.request.name)
+            # search by 'id' also seams to work through LDAP groups
+            # instead of search by 'name'
+            result = search_view.searchGroups(id=self.request.name)
         else:
             result = search_view.searchGroups()
         result = [r for r in result if not r['pluginid'] in ('auto_group',)]
