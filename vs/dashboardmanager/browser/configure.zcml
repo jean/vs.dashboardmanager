@@ -73,4 +73,18 @@
       file="resources/dashboardmanager.css"
       />
 
+  <browser:resource
+      name="vs.dashboardmanager.indicator.gif"
+      file="resources/indicator.gif"
+      />
+
+  <browser:resource
+      name="vs.dashboardmanager.autocomplete.css"
+      file="resources/jquery.autocomplete.css"
+      />
+  <browser:resource
+      name="vs.dashboardmanager.autocomplete.js"
+      file="resources/jquery.autocomplete.js"
+      />
+
 </configure>
