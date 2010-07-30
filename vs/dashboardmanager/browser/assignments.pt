@@ -27,7 +27,7 @@
         <fieldset> 
             <legend i18n:translate="label_assign_portlets">Assign portlets to the dashboard(s) of a member or a group of members</legend>
 
-            <form method="post" tal:attributes="action string:${context/absolute_url}/@@push-assignment" 
+            <form method="post" tal:attributes="action string:${context/absolute_url}/@@push-assignments" 
                 tal:define="groups view/getGroups">
                 <label for="userid" i18:translate="label_member">Member</label>
                 <input type="text" name="userid" id="userid" size="20" />

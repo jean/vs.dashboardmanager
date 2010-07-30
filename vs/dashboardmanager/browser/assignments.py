@@ -75,6 +75,7 @@ class Assignments(BrowserView):
         userids = self._get_memberids_from_request()
 
         dashboards_updated = dict()
+        site = getUtility(ISiteRoot)
         for userid in userids:
 
             # iterate over all configured portlet managers (1-4) for PortletPage
