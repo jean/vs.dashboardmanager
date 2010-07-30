@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-07-30 09:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Carsten Raddatz <carsten.raddatz@veit-schiele.de>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: de\n"
+"Language-Name: Deutsch\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: vs.dashboardmanager\n"
+"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
+
+#: vs.dashboardmanager/vs/dashboardmanager/browser/manager.py:39
+msgid "Dashboard templates"
+msgstr "Dashboard-Vorlage"
+
+#: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
+msgid "Portlet Page"
+msgstr "Portlet-Seite"
+
+#: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
+msgid "Portlet page"
+msgstr "Eine Portlet-Seite hält verschiedene Portlets vor"
+
+#. Default: "Assign portlets to the dashboard(s) of a member or a group of members"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignment.pt:9
+msgid "label_assign_portlets"
+msgstr "Portlet zu Dashboard(s) eines Mitglieds oder einer Gruppe zuweisen"
+
+#. Default: "Create new portletpage template"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:37
+msgid "label_new_portletpage_template"
+msgstr "Neue Vorlage für Portlet-Seite erstellen"
+
+#. Default: "No portletpage template available"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:13
+msgid "label_no_portletpage_templates available"
+msgstr "Keine Vorlage für Portlet-Seite verfügbar"
+
+#. Default: "Please select..."
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignment.pt:19
+msgid "label_please_select"
+msgstr "Bitte auswählen..."
+
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignment.pt:15
+msgid "or"
+msgstr "oder"
+
