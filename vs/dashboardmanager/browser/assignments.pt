@@ -7,12 +7,13 @@
     <div metal:fill-slot="main">
 
         <script type="text/javascript" tal:content="string:var URL = '${context/absolute_url}'"></script>
+        <script type="text/javascript" tal:content="string:var GROUPS = Array(${view/groups_for_js})"></script>
         
         <script type="text/javascript">
             var  $j = jQuery.noConflict();
 
             $j(document).ready(function() {
-                $j("#group-filter").autocomplete(URL + '/@@groups-by-substring');
+                $j("#group-filter").autocomplete(GROUPS);
             });
 
             function filter_groups() {

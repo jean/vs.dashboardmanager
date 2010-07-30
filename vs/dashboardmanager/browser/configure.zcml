@@ -28,8 +28,8 @@
 
   <browser:page
     for="collective.portletpage.interfaces.IPortletPage"
-    name="groups-by-substring"
-    attribute="groups_by_substring"
+    name="groups_for_js"
+    attribute="groups_for_js"
     class=".assignments.Assignments"
     permission="cmf.ManagePortal"
   />

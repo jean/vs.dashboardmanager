@@ -24,12 +24,10 @@ class Assignments(BrowserView):
 
     template = ViewPageTemplateFile('assignments.pt')
 
-    def groups_by_substring(self, q):
-        """ Callback for AJAX (auto-completion) """
-        q = q.lower()
+    def groups_for_js(self):
+        """ Groups for Javascript """
         groups = self.getGroups()
-        result = [group['id'] for group in groups if q in group['id'].lower()]
-        return '\n'.join(result)
+        return str([group['id'] for group in groups])
 
 
     def getGroups(self): 
