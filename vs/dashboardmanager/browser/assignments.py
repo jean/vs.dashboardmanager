@@ -4,7 +4,6 @@
 # Published under the GNU Public Licence V 2 (GPL 2)
 ################################################################
 
-import demjson
 import operator 
 
 from zope.component import getUtility, getMultiAdapter
