@@ -9,11 +9,16 @@
         <script type="text/javascript" tal:content="string:var URL = '${context/absolute_url}'"></script>
         
         <script type="text/javascript">
+            var  $j = jQuery.noConflict();
 
             function filter_groups() {
-                $j = jQuery.noConflict();
                 var name = $j('#group-filter').val();
                 window.location.href = URL + '/@@assignment?name=' + name;
+            }
+            function view_assignments() {
+                var userid = $j('#userid').val();
+                var group = $j('#group').val();
+                window.location.href = URL + '/@@view-assignments?userid=' + userid + '&group=' + group;
             }
 
         </script>
@@ -47,7 +52,9 @@
 
                 <br/>
                 <br/>
-                <input class="context" type="submit" i18n:attributes="label_button_assign_portlets" value="Assign portlets to dashboard(s)" />
+                <input class="context" type="submit" i18n:attributes="label_button_assign_portlets" value="Assign portlets to dashboard(s)" /> 
+                <input class="context" type="button" i18n:attributes="label_button_view_portlets_assignments" value="View personal dashboard(s)"
+                       onclick="javascript: view_assignments()" /> 
             </form>
         </fieldset>
     </div>

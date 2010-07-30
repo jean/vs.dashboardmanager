@@ -19,9 +19,9 @@ from plone.app.portlets.utils import assignment_mapping_from_key
 from vs.dashboardmanager import MF as _
 from vs.dashboardmanager.logger import LOG
 
-class AssignmentView(BrowserView):
+class Assignments(BrowserView):
 
-    template = ViewPageTemplateFile('assignment.pt')
+    template = ViewPageTemplateFile('assignments.pt')
 
     def getGroups(self): 
         """ Return PAS groups """
@@ -46,11 +46,11 @@ class AssignmentView(BrowserView):
 
         if userid and group:
             self.context.plone_utils.addPortalMessage(u'Please specify either a member or a group - but not both', 'error')
-            return self.request.response.redirect(self.context.absolute_url() + '/@@assignment')
+            return self.request.response.redirect(self.context.absolute_url() + '/@@assignments')
 
         if not userid and not group:
             self.context.plone_utils.addPortalMessage(u'Please specify either a member or a group', 'error')
-            return self.request.response.redirect(self.context.absolute_url() + '/@@assignment')
+            return self.request.response.redirect(self.context.absolute_url() + '/@@assignments')
 
         site = getUtility(ISiteRoot)
         if userid:
@@ -97,3 +97,7 @@ class AssignmentView(BrowserView):
 
     def __call__(self, *args, **kw):
         return self.template(*args, **kw)
+
+class ViewAssignments(Assignments):
+
+    template = ViewPageTemplateFile('view-assignments.pt')

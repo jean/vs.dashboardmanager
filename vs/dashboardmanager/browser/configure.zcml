@@ -28,8 +28,16 @@
 
   <browser:page
     for="collective.portletpage.interfaces.IPortletPage"
-    name="assignment"
-    class=".assignment.AssignmentView"
+    name="assignments"
+    class=".assignments.Assignments"
+    permission="cmf.ManagePortal"
+  />
+
+  <browser:page
+    for="collective.portletpage.interfaces.IPortletPage"
+    name="view-assignments"
+    class=".assignments.ViewAssignments"
+    template="view-assignments.pt"
     permission="cmf.ManagePortal"
   />
 
