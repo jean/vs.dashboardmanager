@@ -70,7 +70,7 @@
 
   <browser:resource
       name="vs.dashboardmanager.css"
-      file="dashboardmanager.css"
+      file="resources/dashboardmanager.css"
       />
 
 </configure>
