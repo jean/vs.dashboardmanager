@@ -17,7 +17,11 @@
             <tal:loop repeat="row view/get_assignments">
                 <dt tal:content="row/userid" />
                 <dd>
-                    <table class="listing">
+                    <span tal:condition="not: row/hasDashboard" i18n:translate="label_user_has_no_dashboard">
+                        no dashboard
+                    </span>
+
+                    <table class="listing" tal:condition="row/hasDashboard">
                         <thead>
                             <tr>
                                 <tal:loop repeat="row2 row/dashboards">

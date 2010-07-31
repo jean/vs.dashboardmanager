@@ -134,6 +134,7 @@ class ViewAssignments(Assignments):
         for userid in userids:
             # iterate over the four portlet managers in each user dashboard
             dash2portlets = list()
+            found = False
             for i in range(1, 5):
                 # get hold of the user dashboard manager
                 manager_name = 'plone.dashboard%d' % i
@@ -146,9 +147,10 @@ class ViewAssignments(Assignments):
                 portlets = list()
                 for portlet_id in mapping:
                     portlets.append(dict(portlet_id=portlet_id, assignment=mapping[portlet_id]))
+                    found = True
 
                 dash2portlets.append(dict(manager=manager_name, portlets=portlets))
-            user2dash.append(dict(userid=userid, dashboards=dash2portlets))
+            user2dash.append(dict(userid=userid, dashboards=dash2portlets, hasDashboard=found))
 
         return user2dash
 

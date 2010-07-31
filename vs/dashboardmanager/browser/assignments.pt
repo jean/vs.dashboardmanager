@@ -48,8 +48,8 @@
                         tal:attributes="value group/id"
                         />
                 </select>
-                <span tal:content="python: len(groups)" /> 
-                (<span i18n:translate="label_number_groups_found">groups found</span>)
+                (<span tal:content="python: len(groups)" /> 
+                <span i18n:translate="label_number_groups_found">groups found</span>)
                 <input type="text" name="name" size="20" value="" 
                        tal:attributes="value request/name | nothing"
                        id="group-filter"/>
