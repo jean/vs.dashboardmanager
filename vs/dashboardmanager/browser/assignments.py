@@ -114,6 +114,34 @@ class Assignments(BrowserView):
         return self.request.response.redirect(self.context.absolute_url())
 
 
+    def remove_assignments(self):
+        """ Remove a list of portlets from user dashboards """
+
+        site = getUtility(ISiteRoot)
+        for id in self.request.form.get('ids', []):
+            # id = 'user=XXXX::manager=YYYY:portlet=ZZZZ'
+            items = id.split('::')
+            userid = items[0].split('=')[-1]
+            portlet_manager_name = items[1].split('=')[-1]
+            portlet_id = items[2].split('=')[-1]
+
+            # get hold of the user dashboard manager
+            portlet_manager = getUtility(IPortletManager, name=portlet_manager_name)
+            mapping = assignment_mapping_from_key(site, 
+                                                  portlet_manager_name,
+                                                  category='user', 
+                                                  key=userid, 
+                                                  create=False)
+            del mapping[portlet_id]
+            mapping._p_changed = True
+
+        self.context.plone_utils.addPortalMessage(_(u'label_portlets_removed_from_dashboard',
+                                                    u'Portlets removed from user dashboard(s)'))
+
+        url = '%s/@@view-assignments?userid=%s&group=%s' % (self.context.absolute_url(),
+                self.request.get('userid', ''), self.request.get('group', ''))
+        return self.request.response.redirect(url)
+
     def __call__(self, *args, **kw):
         return self.template(*args, **kw)
 
@@ -155,5 +183,3 @@ class ViewAssignments(Assignments):
             user2dash.append(dict(userid=userid, dashboards=dash2portlets, hasDashboard=found))
 
         return user2dash
-
-

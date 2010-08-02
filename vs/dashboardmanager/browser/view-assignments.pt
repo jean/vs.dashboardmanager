@@ -12,38 +12,48 @@
         <label i18:translate="label_group">Group</label>:
         <span tal:replace="request/group | nothing" />
 
-        <dl>
-            <tal:loop repeat="row view/get_assignments">
-                <dt tal:content="row/userid" />
-                <dd>
-                    <span tal:condition="not: row/hasDashboard" i18n:translate="label_user_has_no_dashboard">
-                        no dashboard
-                    </span>
+        <form tal:attributes="action string:${context/absolute_url}/@@remove-assignments" method="post">
+            <input type="hidden" name="userid" tal:attributes="value request/userid|nothing" />
+            <input type="hidden" name="group" tal:attributes="value request/group|nothing" />
+            <dl>
+                <tal:loop repeat="row view/get_assignments">
+                    <dt tal:content="row/userid" />
+                    <dd>
+                        <span tal:condition="not: row/hasDashboard" i18n:translate="label_user_has_no_dashboard">
+                            Dashboard of user is empty
+                        </span>
 
-                    <table class="listing" tal:condition="row/hasDashboard">
-                        <thead>
-                            <tr>
-                                <tal:loop repeat="row2 row/dashboards">
-                                    <th tal:content="row2/manager" />
-                                </tal:loop>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <tal:loop repeat="row2 row/dashboards">
-                                    <td valign="top">
-                                        <div tal:repeat="d row2/portlets">
-                                            <span tal:content="d/portlet_id" />
-                                            <span tal:content="d/parameters | nothing" />
-                                        </div>
-                                    </td>
-                                </tal:loop>
-                            </tr>
-                        </tbody>
-                    </table>
-                </dd>
-            </tal:loop>
-        </dl>
+                        <table class="listing" tal:condition="row/hasDashboard">
+                            <thead>
+                                <tr>
+                                    <tal:loop repeat="row2 row/dashboards">
+                                        <th tal:content="row2/manager" />
+                                    </tal:loop>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <tal:loop repeat="row2 row/dashboards">
+                                        <td valign="top">
+                                            <div tal:repeat="d row2/portlets">
+                                                <input type="checkbox" name="ids:list"
+                                                    tal:attributes="value string:user=${row/userid}::manager=${row2/manager}::portlet=${d/portlet_id}" />
+                                                <span tal:content="d/portlet_id" />
+                                                <span tal:condition="d/parameters" tal:content="d/parameters" />
+                                            </div>
+                                        </td>
+                                    </tal:loop>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </dd>
+                </tal:loop>
+            </dl>
+
+            <input type="submit" value="Remove selected portlets from dashboards" 
+                   class="context"
+                   i18n:attributes="value label_remove_portlets_from_dashboard" />
+        </form>
     </div>
   </body>
 </html>

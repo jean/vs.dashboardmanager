@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.2.7 (2010-08-02)
+------------------
+- preliminary German translation
+- simple UI for the removal of portlets from arbitrary user
+  dashboards
+
 0.2.6 (2010-07-30)
 ------------------
 - auto-completion for group filter
