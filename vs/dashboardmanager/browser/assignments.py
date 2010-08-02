@@ -28,7 +28,6 @@ class Assignments(BrowserView):
         groups = self.getGroups()
         return str([group['id'] for group in groups])
 
-
     def getGroups(self): 
         """ Return PAS groups """
         search_view = self.context.restrictedTraverse('@@pas_search')
@@ -41,7 +40,6 @@ class Assignments(BrowserView):
         result = [r for r in result if not r['pluginid'] in ('auto_group',)]
         result = sorted(result, key=operator.itemgetter('title')) 
         return result
-
 
     def _get_memberids_from_request(self):
         """ Return a list of userids based on the 'group' and 'userid'
@@ -146,7 +144,11 @@ class ViewAssignments(Assignments):
                                                       create=True)
                 portlets = list()
                 for portlet_id in mapping:
-                    portlets.append(dict(portlet_id=portlet_id, assignment=mapping[portlet_id]))
+                    assignment = mapping[portlet_id]
+                    parameters = dict([(k,v) for k,v in assignment.__dict__.items() if not k.startswith('_')])
+                    portlets.append(dict(portlet_id=portlet_id, 
+                                         assignment=assignment,
+                                         parameters=parameters))
                     found = True
 
                 dash2portlets.append(dict(manager=manager_name, portlets=portlets))

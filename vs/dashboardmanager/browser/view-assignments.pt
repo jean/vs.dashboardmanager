@@ -3,7 +3,6 @@
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="vs.dashboardmanager">
   <body>
-
     <div metal:fill-slot="main">
 
         <h1 i18n:translate="label_portlet_assignments">Portlet assignments in dashboard(s)</h1>
@@ -32,10 +31,11 @@
                         <tbody>
                             <tr>
                                 <tal:loop repeat="row2 row/dashboards">
-                                    <td>
-                                        <div tal:repeat="d row2/portlets"
-                                            tal:content="d/portlet_id" 
-                                        />
+                                    <td valign="top">
+                                        <div tal:repeat="d row2/portlets">
+                                            <span tal:content="d/portlet_id" />
+                                            <span tal:content="d/parameters | nothing" />
+                                        </div>
                                     </td>
                                 </tal:loop>
                             </tr>
@@ -44,7 +44,6 @@
                 </dd>
             </tal:loop>
         </dl>
-
     </div>
   </body>
 </html>
