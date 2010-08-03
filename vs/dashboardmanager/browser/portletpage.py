@@ -20,7 +20,6 @@ class PortletPageView(Base):
     def isManager(self):
         mt = getToolByName(self, 'portal_membership')
         member = mt.getAuthenticatedMember()
-        return member.hasPermission(ManagePortal, self.context)
-
+        return member.has_permission(ManagePortal, self.context)
     
     __call__ = ViewPageTemplateFile('portletpage.pt')
