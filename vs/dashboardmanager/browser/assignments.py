@@ -135,7 +135,7 @@ class Assignments(BrowserView):
             del mapping[portlet_id]
             mapping._p_changed = True
 
-        self.context.plone_utils.addPortalMessage(_(u'label_portlets_removed_from_dashboard',
+        self.context.plone_utils.addPortalMessage((u'label_portlets_removed_from_dashboard',
                                                     u'Portlets removed from user dashboard(s)'))
 
         url = '%s/@@view-assignments?userid=%s&group=%s' % (self.context.absolute_url(),

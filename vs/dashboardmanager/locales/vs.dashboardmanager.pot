@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-07-30 09:04+0000\n"
+"POT-Creation-Date: 2010-08-03 11:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Carsten Raddatz <carsten.raddatz@veit-schiele.de>\n"
 "Language-Team: Deutsch <dashboardmanager@veit-schiele.de>\n"
@@ -12,14 +12,21 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: de\n"
-"Language-Name: Deutsch\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: vs.dashboardmanager\n"
-"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
+
+#: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:15
+msgid "Dashboard page"
+msgstr ""
 
 #: vs.dashboardmanager/vs/dashboardmanager/browser/manager.py:39
 msgid "Dashboard templates"
+msgstr ""
+
+#: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:10
+msgid "My dashboard pages"
 msgstr ""
 
 #: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
@@ -30,9 +37,23 @@ msgstr ""
 msgid "Portlet page"
 msgstr ""
 
+#: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:16
+msgid "Used for groups"
+msgstr ""
+
 #. Default: "Assign portlets to the dashboard(s) of a member or a group of members"
-#: vs.dashboardmanager/vs/dashboardmanager/browser/assignment.pt:9
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:34
 msgid "label_assign_portlets"
+msgstr ""
+
+#. Default: "Dashboard-Manager"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:10
+msgid "label_dashboard_manager"
+msgstr ""
+
+#. Default: "Filter groups"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:56
+msgid "label_filter_groups"
 msgstr ""
 
 #. Default: "Create new portletpage template"
@@ -45,12 +66,42 @@ msgstr ""
 msgid "label_no_portletpage_templates available"
 msgstr ""
 
+#. Default: "groups found"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:52
+msgid "label_number_groups_found"
+msgstr ""
+
 #. Default: "Please select..."
-#: vs.dashboardmanager/vs/dashboardmanager/browser/assignment.pt:19
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:45
 msgid "label_please_select"
 msgstr ""
 
-#: vs.dashboardmanager/vs/dashboardmanager/browser/assignment.pt:15
+#. Default: "Portlet assignments in dashboard(s)"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/view-assignments.pt:8
+msgid "label_portlet_assignments"
+msgstr ""
+
+#. Default: "Portlet page"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:19
+msgid "label_portlet_page"
+msgstr ""
+
+#. Default: "Remove selected portlets from dashboards"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/view-assignments.pt:53
+msgid "label_remove_portlets_from_dashboard"
+msgstr ""
+
+#. Default: "State"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:21
+msgid "label_review_state"
+msgstr ""
+
+#. Default: "Dashboard of user is empty"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/view-assignments.pt:22
+msgid "label_user_has_no_dashboard"
+msgstr ""
+
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:41
 msgid "or"
 msgstr ""
 

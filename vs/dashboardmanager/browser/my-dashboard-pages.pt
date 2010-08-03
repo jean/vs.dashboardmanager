@@ -7,13 +7,13 @@
     <div metal:fill-slot="main"
         tal:define="templates view/my_dashboard_pages">
 
-        <h1>My dashboard pages</h1>
+        <h1 i18n:translate="My dashboard pages">My dashboard pages</h1>
 
         <table class="listing" tal:condition="templates">
             <thead>
                 <tr>   
-                    <th>Dashboard page</th>   
-                    <th>Used for groups</th>   
+                    <th i18n:translate="Dashboard page">Dashboard page</th>   
+                    <th i18n:translate="Used for groups">Used for groups</th>   
                 </tr>   
             </thead>
 
