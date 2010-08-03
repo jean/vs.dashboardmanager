@@ -7,7 +7,7 @@
     <div metal:fill-slot="main"
         tal:define="templates view/available_dashboard_pages">
 
-        <h1>vs.dashboardmanager</h1>
+        <h1 i18n:translate="label_dashboard_manager">Dashboard-Manager</h1>
 
         <div class="warning" tal:condition="not: templates">
             <span i18n:translate="label_no_portletpage_templates available">No portletpage template available</span>
@@ -16,9 +16,9 @@
         <table class="listing" tal:condition="templates">
             <thead>
                 <tr>   
-                    <th>Dashboard page</th>   
+                    <th i18n:translate="label_portlet_page">Portlet page</th>   
                     <th tal:condition="nothing">Used for groups</th>   
-                    <th>State</th>   
+                    <th i18n:translate="label_review_state">State</th>   
                 </tr>   
             </thead>
 
@@ -34,7 +34,11 @@
             </tbody>
         </table>
 
-        <a tal:attributes="href string:$portal_url/@@new-dashboard-page" i18n:translate="label_new_portletpage_template">Create new portletpage template</a>
+        <a tal:condition="nothing"
+           tal:attributes="href string:$portal_url/@@new-dashboard-page" 
+           i18n:translate="label_new_portletpage_template">
+            Create new portletpage template
+        </a>
 
     </div>
   </body>
