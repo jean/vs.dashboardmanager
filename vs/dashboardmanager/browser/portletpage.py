@@ -5,6 +5,8 @@
 ################################################################
 
 
+from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.permissions import ManagePortal
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
@@ -14,5 +16,11 @@ class Base(BrowserView):
 
 class PortletPageView(Base):
     """Default view for PortletPage """
+
+    def isManager(self):
+        mt = getToolByName(self, 'portal_membership')
+        member = mt.getAuthenticatedMember()
+        return member.hasPermission(ManagePortal, self.context)
+
     
     __call__ = ViewPageTemplateFile('portletpage.pt')

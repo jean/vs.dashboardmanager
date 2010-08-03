@@ -51,7 +51,8 @@
                 </tr>
             </tbody>
         </table>
-        <a tal:attributes="href string:$portal_url/@@dashboard-manager">
+        <a tal:attributes="href string:$portal_url/@@dashboard-manager" 
+           tal:condition="view/isManager" >
             Back to dashboard manager
         </a>
 
