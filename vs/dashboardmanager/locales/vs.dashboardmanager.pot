@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-08-03 11:05+0000\n"
+"POT-Creation-Date: 2010-08-04 10:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Carsten Raddatz <carsten.raddatz@veit-schiele.de>\n"
 "Language-Team: Deutsch <dashboardmanager@veit-schiele.de>\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: vs.dashboardmanager\n"
+
+#: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
+msgid "Assignment"
+msgstr ""
 
 #: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:15
 msgid "Dashboard page"
@@ -30,15 +34,16 @@ msgid "My dashboard pages"
 msgstr ""
 
 #: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
-msgid "Portlet Page"
-msgstr ""
-
-#: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
-msgid "Portlet page"
+msgid "Portlets"
 msgstr ""
 
 #: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:16
 msgid "Used for groups"
+msgstr ""
+
+#. Default: "Portlet page"
+#: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
+msgid "description_portlet_page"
 msgstr ""
 
 #. Default: "Assign portlets to the dashboard(s) of a member or a group of members"

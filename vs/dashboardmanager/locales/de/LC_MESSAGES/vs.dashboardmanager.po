@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-08-03 11:05+0000\n"
+"POT-Creation-Date: 2010-08-04 10:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Carsten Raddatz <carsten.raddatz@veit-schiele.de>\n"
 "Language-Team: Deutsch <dashboardmanager@veit-schiele.de>\n"
@@ -15,39 +15,44 @@ msgstr ""
 "Domain: vs.dashboardmanager\n"
 "X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
+#: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
+msgid "Assignment"
+msgstr "Zuweisungen"
+
 #: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:15
 msgid "Dashboard page"
-msgstr "Dashboard-Seite"
+msgstr "Persönliche Seite"
 
 #: vs.dashboardmanager/vs/dashboardmanager/browser/manager.py:39
 msgid "Dashboard templates"
-msgstr "Dashboard-Vorlage"
+msgstr "Vorlage für persönliche Seite"
 
 #: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:10
 msgid "My dashboard pages"
-msgstr "Meine Dashboard-Seiten"
+msgstr "Meine persönlichen Seiten"
 
 #: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
-msgid "Portlet Page"
-msgstr "Portlet-Seite"
-
-#: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
-msgid "Portlet page"
-msgstr "Eine Portlet-Seite hält verschiedene Portlets vor"
+msgid "Portlets"
+msgstr "Portlets"
 
 #: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:16
 msgid "Used for groups"
-msgstr "verwendet für Gruppen"
+msgstr "Verwendet für Gruppen"
+
+#. Default: "Portlet page"
+#: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
+msgid "description_portlet_page"
+msgstr "Portlet-Seite"
 
 #. Default: "Assign portlets to the dashboard(s) of a member or a group of members"
 #: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:34
 msgid "label_assign_portlets"
-msgstr "Portlet zu Dashboard(s) eines Mitglieds oder einer Gruppe zuweisen"
+msgstr "Portlet zu persönlichen Seiten eines Mitglieds oder einer Gruppe zuweisen"
 
 #. Default: "Dashboard-Manager"
 #: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:10
 msgid "label_dashboard_manager"
-msgstr "Dashboard-Manager"
+msgstr "Manager für persönliche Seiten"
 
 #. Default: "Filter groups"
 #: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:56
@@ -87,7 +92,7 @@ msgstr "Portlet-Seite"
 #. Default: "Remove selected portlets from dashboards"
 #: vs.dashboardmanager/vs/dashboardmanager/browser/view-assignments.pt:53
 msgid "label_remove_portlets_from_dashboard"
-msgstr "Gewählte Portlets aus Dashboards entfernen"
+msgstr "Gewählte Portlets aus persönlichen Seiten entfernen"
 
 #. Default: "State"
 #: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:21
@@ -97,7 +102,7 @@ msgstr "Status"
 #. Default: "Dashboard of user is empty"
 #: vs.dashboardmanager/vs/dashboardmanager/browser/view-assignments.pt:22
 msgid "label_user_has_no_dashboard"
-msgstr "Dashboard des Mitglieds ist leer"
+msgstr "Persönliche Seite des Mitglieds ist leer"
 
 #: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:41
 msgid "or"
