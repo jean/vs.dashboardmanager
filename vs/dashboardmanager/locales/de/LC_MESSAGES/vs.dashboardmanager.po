@@ -108,3 +108,8 @@ msgstr "Persönliche Seite des Mitglieds ist leer"
 msgid "or"
 msgstr "oder"
 
+msgid "label_userid"
+msgstr "Benutzer-ID"
+
+msgid "label_group"
+msgstr "Gruppen-ID"

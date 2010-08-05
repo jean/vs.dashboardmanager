@@ -11,9 +11,10 @@ Installation
 ============
 
 * add ``vs.dashboardmanager`` to the ``eggs`` and ``zcml`` options of 
-  your buildout.cfg and re-run buildout
+  your buildout.cfg and re-run buildout (under Plone 4 you can omit the
+  ``zcml`` slug)
 
-* either create a new Plone site using the ``vs.dashboardmanager`` extension profile
+* either create a new Plone site using the ``Dashboard Manager`` extension profile
   or install it through the Plone site setup control panel
 
 Usage
@@ -22,8 +23,9 @@ Usage
 * use the dashboard management option from the Plone control panel or add
   ``@@dashboard-manager`` to the URL of the Plone site
 
-* create a new portlet page with some portlets (using the ``Portlets`` tab)
-  of the portlet page
+* create a new portlet page (standard content-type and available as add-able 
+  content from the standard "Add" drop-down in the folder contents view 
+  with some portlets (using the ``Portlets`` tab) of the portlet page
 
 * push the portlet into the dashboard of a user or a group using 
   the ``assigments`` tab of a portlet page
@@ -32,7 +34,7 @@ Usage
 Tested
 ======
 * tested with Plone 3.3.X
-* untested with Plone 4.X
+* tested with Plone 4.0.X
 
 Licence
 =======
@@ -43,6 +45,10 @@ Credits
 ``vs.dashboardmanager`` is based and influenced by ``collective.portletpage``
 by Martin Aspeli. ``vs.dashboardmanager`` is uses in parts of
 ``collective.portletpage``.
+
+Thanks to Veit Schiele and Immanuel Diakonie Group for the funding.
+
+Carsten Raddatz provided the german translation.
 
 Authors
 =======

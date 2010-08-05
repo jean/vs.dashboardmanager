@@ -5,7 +5,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="vs.dashboardmanager"
+      title="Dashboard Manager"
       directory="profiles/default"
       description='vs.dashboardmanager'
       provides="Products.GenericSetup.interfaces.EXTENSION"

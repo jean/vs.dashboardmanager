@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.2.8 (2010-08-05)
+------------------
+- i18n update
+- some fixes
+- documentation update
+
 0.2.7 (2010-08-02)
 ------------------
 - preliminary German translation
