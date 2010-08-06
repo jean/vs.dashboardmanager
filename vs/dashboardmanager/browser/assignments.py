@@ -53,12 +53,10 @@ class Assignments(BrowserView):
         mt = getToolByName(self.context, 'portal_membership')
 
         if userid and group:
-            self.context.plone_utils.addPortalMessage(u'Please specify either a member or a group - but not both', 'error')
-            return self.request.response.redirect(self.context.absolute_url() + '/@@assignments')
+            return ()
 
         if not userid and not group:
-            self.context.plone_utils.addPortalMessage(u'Please specify either a member or a group', 'error')
-            return self.request.response.redirect(self.context.absolute_url() + '/@@assignments')
+            return ()
 
         site = getUtility(ISiteRoot)
         if userid:
@@ -77,6 +75,11 @@ class Assignments(BrowserView):
         """
 
         userids = self._get_memberids_from_request()
+        if not userids:
+            self.context.plone_utils.addPortalMessage(u'No members found', 'error')
+            url = '%s/@@assignments?userid=%s&group=%s' % (self.context.absolute_url(),
+                    self.request.get('userid', ''), self.request.get('group', ''))
+            return self.request.response(url)
 
         dashboards_updated = dict()
         site = getUtility(ISiteRoot)
