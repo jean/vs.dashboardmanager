@@ -79,7 +79,7 @@ class Assignments(BrowserView):
             self.context.plone_utils.addPortalMessage(u'No members found', 'error')
             url = '%s/@@assignments?userid=%s&group=%s' % (self.context.absolute_url(),
                     self.request.get('userid', ''), self.request.get('group', ''))
-            return self.request.response(url)
+            return self.request.response.redirect(url)
 
         dashboards_updated = dict()
         site = getUtility(ISiteRoot)
@@ -104,8 +104,9 @@ class Assignments(BrowserView):
 
                 # and copy over the assignments
                 for id, assignment in mapping.items():
+                    assignment_copy=assignment._getCopy(assignment)
                     if not id in ids2:
-                        mapping2[id] = assignment
+                        mapping2[id] = assignment_copy
                         LOG.info('assigned portlet %s to %s' % (id, userid))
                         dashboards_updated[userid] = True
 

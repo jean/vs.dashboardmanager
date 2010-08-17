@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.2.9-experimental_manager (2010-08-06)
+------------------
+- Created a new object that extends portlet pages, but doesn't change their features [micecchi]
+- Fixed portlet provider interfaces. Now  you can add only the portlet of dashboard-manager [micecchi]
+- Fixed assignment copy. Now the portlets are deep-copied in user's dashboard and not simply assigned.
+  In this way when an user modify one portlet in his dashboard, this change doesn't affect other user's portlets. [micecchi]   
+
 0.2.9 (2010-08-06)
 ------------------
 - improved error handling

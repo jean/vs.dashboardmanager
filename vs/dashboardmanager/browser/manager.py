@@ -24,7 +24,7 @@ class ManagementView(BrowserView):
         """ return list of available dashboard templates """
 
         catalog = getToolByName(self, 'portal_catalog')
-        return catalog(portal_type='Portlet Page', 
+        return catalog(portal_type='DashboardManager', 
                        sort_on='getObjPositionInParent')
 
     def new_dashboard_page(self):
@@ -59,7 +59,7 @@ class PersonalDashboardView(BrowserView):
         catalog = getToolByName(self, 'portal_catalog')
 
         result = list()
-        for brain in catalog(portal_type='Portlet Page'):
+        for brain in catalog(portal_type='DashboardManager'):
             page_roles = set(brain.getUsedForGroups)
             if groups.intersection(page_groups):
                 result.append(brain)
