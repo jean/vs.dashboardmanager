@@ -1,6 +1,6 @@
 <object name="portal_types">
     
- <object name="Portlet Page"
+ <object name="DashboardManager"
     meta_type="Factory-based Type Information with dynamic views" />
     
 </object>

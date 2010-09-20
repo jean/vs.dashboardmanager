@@ -5,7 +5,6 @@
 ################################################################
 
 
-import patches
 from zope.i18nmessageid import MessageFactory
 
 MF = MessageFactory('vs.dashboardmanager')

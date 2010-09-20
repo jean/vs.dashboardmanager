@@ -58,8 +58,8 @@
 
                 <br/>
                 <br/>
-                <input class="context" type="submit" i18n:attributes="label_button_assign_portlets" value="Assign portlets to dashboard(s)" /> 
-                <input class="context" type="button" i18n:attributes="label_button_view_portlets_assignments" value="View personal dashboard(s)"
+                <input class="context" type="submit" i18n:attributes="value label_button_assign_portlets" value="Assign portlets to dashboard(s)" /> 
+                <input class="context" type="button" i18n:attributes="value label_button_view_portlets_assignments" value="View personal dashboard(s)"
                        onclick="javascript: view_assignments()" /> 
             </form>
         </fieldset>

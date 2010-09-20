@@ -108,8 +108,15 @@ msgstr "Persönliche Seite des Mitglieds ist leer"
 msgid "or"
 msgstr "oder"
 
-msgid "label_userid"
+msgid "label_member"
 msgstr "Benutzer-ID"
 
 msgid "label_group"
 msgstr "Gruppen-ID"
+
+msgid "label_button_assign_portlets"
+msgstr "An Dashboardmanager zuweisen"
+
+msgid "label_button_view_portlets_assignments"
+msgstr "Persönliche Dashboards anzeigen"
+
