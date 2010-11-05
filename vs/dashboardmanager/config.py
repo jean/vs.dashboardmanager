@@ -10,3 +10,7 @@ DEPENDENCIES = (
 )
 
 PROJECTNAME = 'vs.dashboardmanager'
+
+ADD_PERMISSIONS = {
+    'DashboardManager': 'vs.dashboardmanager: Add DashboardManager',
+}

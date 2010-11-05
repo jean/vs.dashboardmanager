@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.2.9'
+version = '0.3.1-SVN_UNRELEASED'
 
 setup(name='vs.dashboardmanager',
       version=version,
@@ -34,6 +34,5 @@ setup(name='vs.dashboardmanager',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
       paster_plugins=["ZopeSkel"],
       )

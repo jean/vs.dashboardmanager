@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="vs.dashboardmanager">
+
+  <!-- configure your content components here -->
+  <class class=".dashboardmanager.DashboardManager">
+	  <require
+	    permission="zope2.View"
+	    interface="..interfaces.IDashboardManager"
+	    />
+	  <require
+	  	permission="cmf.ModifyPortalContent"
+	    set_schema="..interfaces.IDashboardManager"
+	    />
+  </class>
+  
+</configure>

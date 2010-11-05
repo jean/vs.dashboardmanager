@@ -6,7 +6,11 @@
 
 from plone.app.portlets.interfaces import IDashboard
 from plone.portlets.interfaces import IPortletManager
+from zope.interface import Interface
 
 class IPortletPageColumn(IDashboard):
     """Marker interface describing columns on a portlet page.
+    """
+class IDashboardManager(Interface):
+    """Marker interface describing dashboardmanager object.
     """
