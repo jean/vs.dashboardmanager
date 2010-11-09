@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Definition of the DashboardMAnager content type
+"""Definition of the DashboardManager content type
 """
 from AccessControl import ClassSecurityInfo
 from Products.Archetypes import atapi
