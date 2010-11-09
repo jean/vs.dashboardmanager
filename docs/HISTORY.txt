@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3.1-SVN_UNRELEASED (2010-10-??)
+0.3.1 (2010-11-09)
 ------------------
 - Fixed dashboardManager archetype and set adding permission [micecchi]
 

@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.3.1-SVN_UNRELEASED'
+version = '0.3.1'
 
 setup(name='vs.dashboardmanager',
       version=version,
