@@ -3,7 +3,7 @@ Changelog
 
 0.3.2-SVN_UNRELEASED (2010-11-??)
 ------------------
-- removed unused adapter ridefinition. [micecchi]
+- removed unused adapter override. [micecchi]
 
 0.3.1 (2010-11-09)
 ------------------
