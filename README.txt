@@ -23,12 +23,12 @@ Usage
 * use the dashboard management option from the Plone control panel or add
   ``@@dashboard-manager`` to the URL of the Plone site
 
-* create a new portlet page (standard content-type and available as add-able 
+* create a new Dashboard Manager (standard content-type and available as add-able 
   content from the standard "Add" drop-down in the folder contents view 
-  with some portlets (using the ``Portlets`` tab) of the portlet page
+  with some portlets (using the ``Portlets`` tab) 
 
 * push the portlet into the dashboard of a user or a group using 
-  the ``assigments`` tab of a portlet page
+  the ``assigments`` tab of the Dashboard Manager
 
 
 Tested

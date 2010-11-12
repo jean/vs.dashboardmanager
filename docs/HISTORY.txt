@@ -1,9 +1,9 @@
 Changelog
 =========
 
-0.3.2-SVN_UNRELEASED (2010-11-??)
+0.3.2 (2010-11-12)
 ------------------
-- removed unused adapter override. [micecchi]
+- Femoved unused adapter override [micecchi]
 
 0.3.1 (2010-11-09)
 ------------------
