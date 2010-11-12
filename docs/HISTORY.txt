@@ -3,7 +3,7 @@ Changelog
 
 0.3.2 (2010-11-12)
 ------------------
-- Femoved unused adapter override [micecchi]
+- Removed unused adapter override [micecchi]
 
 0.3.1 (2010-11-09)
 ------------------
