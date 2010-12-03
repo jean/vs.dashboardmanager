@@ -1,6 +1,9 @@
 Changelog
 =========
 
+0.3.3 (2010-12-03)
+- Added Spanish translation [hvelarde]
+
 0.3.2 (2010-11-12)
 ------------------
 - Removed unused adapter override [micecchi]

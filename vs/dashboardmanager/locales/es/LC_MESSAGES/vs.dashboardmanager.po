@@ -1,0 +1,132 @@
+# Héctor Velarde, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: vs.dashboardmanager\n"
+"POT-Creation-Date: 2010-08-04 10:23+0000\n"
+"PO-Revision-Date: 2010-12-03 16:30-0500\n"
+"Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: vs.dashboardmanager\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+
+#: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
+msgid "Assignment"
+msgstr "Asignación"
+
+#: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:15
+msgid "Dashboard page"
+msgstr "Página del tablero de mandos"
+
+#: vs.dashboardmanager/vs/dashboardmanager/browser/manager.py:39
+msgid "Dashboard templates"
+msgstr "Plantilla del tablero de mandos"
+
+#: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:10
+msgid "My dashboard pages"
+msgstr "Mis tableros de mandos"
+
+#: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
+msgid "Portlets"
+msgstr "Portlets"
+
+#: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:16
+msgid "Used for groups"
+msgstr "Usado por los grupos"
+
+#. Default: "Portlet page"
+#: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
+msgid "description_portlet_page"
+msgstr "Página del portlet"
+
+#. Default: "Assign portlets to the dashboard(s) of a member or a group of members"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:34
+msgid "label_assign_portlets"
+msgstr "Asignar portlets al tablero de mandos de un usuario o de un grupo"
+
+#. Default: "Dashboard-Manager"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:10
+msgid "label_dashboard_manager"
+msgstr "Administrador del tablero de mandos"
+
+#. Default: "Filter groups"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:56
+msgid "label_filter_groups"
+msgstr "Filtrar grupos"
+
+#. Default: "Create new portletpage template"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:37
+msgid "label_new_portletpage_template"
+msgstr "Crear nueva plantilla de página de portlets"
+
+#. Default: "No portletpage template available"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:13
+msgid "label_no_portletpage_templates available"
+msgstr "No hay ninguna plantilla de página de portlets disponible"
+
+#. Default: "groups found"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:52
+msgid "label_number_groups_found"
+msgstr "grupos encontrados"
+
+#. Default: "Please select..."
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:45
+msgid "label_please_select"
+msgstr "Seleccione, por favor..."
+
+#. Default: "Portlet assignments in dashboard(s)"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/view-assignments.pt:8
+msgid "label_portlet_assignments"
+msgstr "Asignación de portlets en los tableros de mandos"
+
+#. Default: "Portlet page"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:19
+msgid "label_portlet_page"
+msgstr "Página de portlets"
+
+#. Default: "Remove selected portlets from dashboards"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/view-assignments.pt:53
+msgid "label_remove_portlets_from_dashboard"
+msgstr "Eliminar los portlets seleccionados del tablero de mandos"
+
+#. Default: "State"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:21
+msgid "label_review_state"
+msgstr "Estado"
+
+#. Default: "Dashboard of user is empty"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/view-assignments.pt:22
+msgid "label_user_has_no_dashboard"
+msgstr "El tablero de mandos del usuario está vacío"
+
+#. Default: "Member"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:38
+msgid "label_member"
+msgstr "Usuario"
+
+#. Default: "Group"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:43
+msgid "label_group"
+msgstr "Grupo"
+
+#. Default: "or"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:52
+msgid "or"
+msgstr "o"
+
+#. Default: "Assign portlets to dashboard(s)"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:61
+msgid "label_button_assign_portlets"
+msgstr "Asignar portlets a los tableros de mandos"
+
+#. Default: "View personal dashboard(s)"
+#: vs.dashboardmanager/vs/dashboardmanager/browser/assignments.pt:62
+msgid "label_button_view_portlets_assignments"
+msgstr "Ver tableros de mandos personales"
+
