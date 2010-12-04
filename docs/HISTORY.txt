@@ -3,6 +3,7 @@ Changelog
 
 0.3.3 (2010-12-03)
 - Added Spanish translation [hvelarde]
+- Some basic tests were added [hvelarde]
 
 0.3.2 (2010-11-12)
 ------------------
