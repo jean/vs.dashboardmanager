@@ -34,5 +34,4 @@ setup(name='vs.dashboardmanager',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      paster_plugins=["ZopeSkel"],
       )
