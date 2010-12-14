@@ -27,7 +27,7 @@ setup(name='vs.dashboardmanager',
           'setuptools',
           'collective.portletpage',
           'archetypes.schemaextender',
-          # -*- Extra requirements: -*-
+          'collective.testcaselayer',
       ],
       entry_points="""
       # -*- Entry points: -*-
