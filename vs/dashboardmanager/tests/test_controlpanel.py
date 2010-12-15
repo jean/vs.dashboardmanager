@@ -23,11 +23,6 @@ class DashboardManagerTest(PloneTestCase):
         self.logout()
         self.assertRaises(Unauthorized, self.portal.restrictedTraverse, '@@dashboard-manager')
         
-    def test_configlet_install(self):
-        controlpanel = getToolByName(self.portal, 'portal_controlpanel')
-        installed = [a.getAction(self)['id'] for a in controlpanel.listActions()]
-        self.failUnless('vs_dashboard_management' in installed)
-
 def test_suite():
     return unittest.defaultTestLoader.loadTestsFromName(__name__)
 
