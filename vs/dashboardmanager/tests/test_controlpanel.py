@@ -11,13 +11,13 @@ class DashboardManagerTest(PloneTestCase):
 
     layer = DashboardManagerLayer
 
-    def test_dashboardmanager_controlpanel_view(self):
+    def test_controlpanel_view(self):
         # dashboard manager setting control panel view
         view = getMultiAdapter((self.portal, self.portal.REQUEST), name='dashboard-manager')
         view = view.__of__(self.portal)
         self.failUnless(view())
 
-    def test_dashboardmanager_controlpanel_view_protected(self):
+    def test_controlpanel_view_protected(self):
         # dashboard manager setting control panel view can not be accessed by anonymous users
         from AccessControl import Unauthorized
         self.logout()
