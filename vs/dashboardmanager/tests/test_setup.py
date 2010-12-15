@@ -43,7 +43,7 @@ class InstallTest(PloneTestCase):
         for js in JAVASCRIPTS:
             self.failUnless(js in self.portal.portal_javascripts.getResourceIds(), '%s javascript not installed' % js)
 
-    def test_configlet(self):
+    def test_configlets(self):
         installed = [a.getAction(self)['id'] for a in self.portal.portal_controlpanel.listActions()]
         for c in CONFIGLETS:
             self.failUnless(c in installed, '%s configlet not installed' % c)
@@ -51,6 +51,12 @@ class InstallTest(PloneTestCase):
     def test_catalog_index_metadata(self):
         self.failUnless('dashboardmanager_groups' in self.portal.portal_catalog.indexes())
         self.failUnless('getUsedForGroups' in self.portal.portal_catalog.schema())
+
+    def test_portlets(self):
+        self.fail('To be implemented...')
+
+    def test_viewlets(self):
+        self.fail('To be implemented...')
 
 class UninstallTest(PloneTestCase):
 
@@ -79,10 +85,16 @@ class UninstallTest(PloneTestCase):
         for js in JAVASCRIPTS:
             self.failIf(js in self.portal.portal_javascripts.getResourceIds(), '%s javascript not installed' % js)
 
-    def test_configlet(self):
+    def test_configlets(self):
         installed = [a.getAction(self)['id'] for a in self.portal.portal_controlpanel.listActions()]
         for c in CONFIGLETS:
             self.failIf(c in installed, '%s configlet not uninstalled' % c)
+
+    def test_portlets(self):
+        self.fail('To be implemented...')
+
+    def test_viewlets(self):
+        self.fail('To be implemented...')
 
 def test_suite():
     return unittest.defaultTestLoader.loadTestsFromName(__name__)
