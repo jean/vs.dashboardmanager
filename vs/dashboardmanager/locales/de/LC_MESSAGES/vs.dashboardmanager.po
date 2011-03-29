@@ -17,7 +17,7 @@ msgstr ""
 
 #: vs.dashboardmanager/vs/dashboardmanager/profiles/default/types/Portlet_Page.xml
 msgid "Assignment"
-msgstr "Zuweisungen"
+msgstr "Zuweisung"
 
 #: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:15
 msgid "Dashboard page"
@@ -25,7 +25,7 @@ msgstr "Persönliche Seite"
 
 #: vs.dashboardmanager/vs/dashboardmanager/browser/manager.py:39
 msgid "Dashboard templates"
-msgstr "Vorlage für persönliche Seite"
+msgstr "Vorlagen für persönliche Seite"
 
 #: vs.dashboardmanager/vs/dashboardmanager/browser/my-dashboard-pages.pt:10
 msgid "My dashboard pages"
@@ -82,7 +82,7 @@ msgstr "Bitte auswählen..."
 #. Default: "Portlet assignments in dashboard(s)"
 #: vs.dashboardmanager/vs/dashboardmanager/browser/view-assignments.pt:8
 msgid "label_portlet_assignments"
-msgstr "Portlet-Zuweisungen"
+msgstr "Portlet-Zuweisungen in persönlichen Seiten"
 
 #. Default: "Portlet page"
 #: vs.dashboardmanager/vs/dashboardmanager/browser/management.pt:19
