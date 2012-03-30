@@ -3,6 +3,8 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="vs.dashboardmanager">
 
+  <include package="Products.CMFCore" file="permissions.zcml" />
+
   <browser:page
       for="Products.CMFCore.interfaces.ISiteRoot"
       name="dashboard-manager"
